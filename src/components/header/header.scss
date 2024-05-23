@@ -1,0 +1,19 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.header {
+  background-color: $bg-secondary;
+
+  &__container {
+    @include container;
+    @include flex;
+  }
+
+  &__burger {
+    margin-right: auto;
+  }
+
+  &__cart {
+    margin-left: auto;
+  }
+}
