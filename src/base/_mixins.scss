@@ -1,0 +1,116 @@
+@use "./variables" as *;
+
+@mixin tablet-and-desktop {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin linear-gradient {
+  background: linear-gradient(
+    135deg,
+    $accent-secondary 15%,
+    $text-secondary 60%,
+    $accent-primary 85%
+  );
+  border: 3px solid $alt;
+}
+
+@mixin logo-text {
+  border-radius: 50%;
+  padding: 0.5rem;
+  @include linear-gradient;
+}
+
+@mixin button-primary {
+  background-color: $accent-primary;
+  color: $text-primary;
+  font-weight: 500;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 2rem;
+  border: none;
+  border: 3px solid $alt;
+
+  @include tablet-and-desktop {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: fit-content;
+    min-width: 7rem;
+  }
+
+  &:hover {
+    opacity: 0.75;
+    border-color: $accent-secondary;
+    cursor: pointer;
+  }
+}
+
+@mixin button-secondary {
+  background-color: $accent-secondary;
+  color: $text-primary;
+  font-weight: 500;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 2rem;
+  border: 3px solid $alt;
+
+  @include tablet-and-desktop {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: fit-content;
+    min-width: 7rem;
+  }
+
+  &:hover {
+    opacity: 0.75;
+    border-color: $accent-primary;
+    cursor: pointer;
+  }
+}
+
+@mixin container {
+  padding: 1rem;
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @include tablet-and-desktop {
+    padding: 2rem;
+  }
+}
+
+@mixin form-field {
+  padding: 0.5rem auto;
+  border-radius: 1rem;
+  border: 1px solid $text-placeholder;
+
+  &:active,
+  &:focus {
+    outline: 1px solid $accent-primary;
+  }
+
+  &::placeholder {
+    color: $text-placeholder;
+  }
+}
+
+@mixin backing {
+  background-color: $bg-transparent;
+  box-shadow: 0 0 5px 5px $bg-transparent;
+  border-radius: 1rem;
+  padding: 0.25rem;
+}
