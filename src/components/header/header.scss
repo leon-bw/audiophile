@@ -11,6 +11,28 @@
 
   &__burger {
     margin-right: auto;
+
+    @include tablet-and-desktop {
+      margin-right: 2rem;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include desktop {
+      @include flex;
+      gap: 1rem;
+      margin-left: auto;
+    }
+
+    &-link {
+      color: $text-secondary;
+    }
   }
 
   &__cart {

@@ -12,6 +12,20 @@ export default function Header() {
         <Link to={"/"}>
           <img src={logo} alt="Audiophile logo" className="header__logo" />
         </Link>
+        <div className="header__nav">
+          <Link to={"/"} className="header__nav-link">
+            HOME
+          </Link>
+          <Link to={"/"} className="header__nav-link">
+            HEADPHONES
+          </Link>
+          <Link to={"/"} className="header__nav-link">
+            SPEAKERS
+          </Link>
+          <Link to={"/"} className="header__nav-link">
+            EARPHONES
+          </Link>
+        </div>
         <img src={cartIcon} alt="Shopping cart" className="header__cart" />
       </section>
     </header>
