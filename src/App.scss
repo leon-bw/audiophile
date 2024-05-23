@@ -1,7 +1,7 @@
-@use "./styles/variables" as *;
-@use "./styles/mixins" as *;
-@use "./styles/typography";
-@use "./styles/resets";
+@use "./styles/partials/utilities/variables" as *;
+@use "./styles/partials/utilities/mixins" as *;
+@use "./styles/partials/base/typography";
+@use "./styles/partials/base/reset";
 
 #root {
   @include flex(column, normal, normal);

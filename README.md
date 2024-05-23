@@ -91,7 +91,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 ## Author
 
 - Leon Williams
-- Caaper Lam
+- Casper Lam
 
 ## Acknowledgments
 
