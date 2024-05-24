@@ -13,8 +13,11 @@
 h1 {
   font-family: "Manrope", sans-serif;
   font-weight: bold;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
+  @include tablet-and-desktop {
+    font-size: 3.5rem;
+  }
 }
 
 h2 {
