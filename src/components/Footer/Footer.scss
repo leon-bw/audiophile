@@ -4,19 +4,23 @@
 .footer {
     background-color: $bg-secondary;
     text-align: center;
+    font-family: "Manrope";
 
     &__container {
         @include container;
     }
 
-    &__heading {
-        color: $text-secondary;
-        margin: 2rem 0;
+    &__logo {
+        margin: -2rem auto 3rem;
+        border-top: 5px solid $accent-primary;
+        padding-top: 3rem;
     }
 
     &__link {
         color: $text-secondary;
         margin: 1rem 0;
+        text-transform: uppercase;
+        font-weight: 400;
 
         &:hover {
             color: $accent-primary;
@@ -35,6 +39,9 @@
 
     &__icon {
         padding: 1rem .5rem;
-    }
 
+        &:hover {
+            filter: brightness(0) saturate(100%) invert(74%) sepia(30%) saturate(4424%) hue-rotate(327deg) brightness(91%) contrast(85%);
+        }
+    }
 }
