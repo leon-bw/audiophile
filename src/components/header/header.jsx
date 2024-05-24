@@ -14,16 +14,16 @@ export default function Header() {
         </Link>
         <div className="header__nav">
           <Link to={"/"} className="header__nav-link">
-            HOME
+            <p className="header__nav-text">HOME</p>
           </Link>
           <Link to={"/"} className="header__nav-link">
-            HEADPHONES
+            <p className="header__nav-text">HEADPHONES</p>
           </Link>
           <Link to={"/"} className="header__nav-link">
-            SPEAKERS
+            <p className="header__nav-text">SPEAKERS</p>
           </Link>
           <Link to={"/"} className="header__nav-link">
-            EARPHONES
+            <p className="header__nav-text">EARPHONES</p>
           </Link>
         </div>
         <img src={cartIcon} alt="Shopping cart" className="header__cart" />
