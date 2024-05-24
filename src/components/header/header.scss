@@ -1,0 +1,41 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.header {
+  background-color: $bg-secondary;
+
+  &__container {
+    @include container;
+    @include flex;
+  }
+
+  &__burger {
+    margin-right: auto;
+
+    @include tablet-and-desktop {
+      margin-right: 2rem;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include desktop {
+      @include flex;
+      gap: 1rem;
+      margin-left: auto;
+    }
+
+    &-link {
+      color: $text-secondary;
+    }
+  }
+
+  &__cart {
+    margin-left: auto;
+  }
+}
