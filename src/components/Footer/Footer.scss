@@ -1,0 +1,40 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.footer {
+    background-color: $bg-secondary;
+    text-align: center;
+
+    &__container {
+        @include container;
+    }
+
+    &__heading {
+        color: $text-secondary;
+        margin: 2rem 0;
+    }
+
+    &__link {
+        color: $text-secondary;
+        margin: 1rem 0;
+
+        &:hover {
+            color: $accent-primary;
+        }
+    }
+
+    &__text,
+    &__copyright {
+        margin: 2rem 0;
+        color: $text-primary-faint;
+    }
+
+    &__socials {
+        @include flex;
+    }
+
+    &__icon {
+        padding: 1rem .5rem;
+    }
+
+}
