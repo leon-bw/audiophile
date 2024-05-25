@@ -33,6 +33,10 @@
     &-link {
       color: $text-secondary;
     }
+
+    &-text {
+      text-transform: uppercase;
+    }
   }
 
   &__cart {
