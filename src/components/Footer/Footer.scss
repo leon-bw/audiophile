@@ -6,14 +6,43 @@
     text-align: center;
     font-family: "Manrope";
 
+    @include tablet-and-desktop {
+        text-align: left;
+    }
+
     &__container {
         @include container;
+    }
+
+    &__headings {
+        @include desktop {
+            @include flex($justify-content: space-between);
+        }
     }
 
     &__logo {
         margin: -2rem auto 3rem;
         border-top: 5px solid $accent-primary;
         padding-top: 3rem;
+
+        @include tablet-and-desktop {
+            margin: -2rem 0 1.5rem;
+        }
+
+    }
+
+    &__links {
+
+        @include tablet-and-desktop {
+            @include flex($justify-content: space-between);
+            margin-right: auto;
+            width: 25rem;
+        }
+
+        @include desktop {
+            margin-left: auto;
+            margin-right: 0;
+        }
     }
 
     &__link {
@@ -21,9 +50,17 @@
         margin: 1rem 0;
         text-transform: uppercase;
         font-weight: 400;
+        font-size: .9rem;
 
         &:hover {
             color: $accent-primary;
+            cursor: pointer;
+        }
+    }
+
+    &__text {
+        @include desktop {
+            width: 30rem;
         }
     }
 
@@ -31,10 +68,25 @@
     &__copyright {
         margin: 2rem 0;
         color: $text-primary-faint;
+
+        @include tablet-and-desktop {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__bottom {
+        @include tablet-and-desktop {
+            @include flex($justify-content: space-between);
+        }
     }
 
     &__socials {
         @include flex;
+
+        @include desktop {
+            position: relative;
+            bottom: 4rem;
+        }
     }
 
     &__icon {

@@ -34,11 +34,19 @@ const Footer = () => {
           helping you get the most out of personal audio. Come and visit our
           demo facility - we’re open 7 days a week.
         </p>
-        <p className="footer__copyright">Copyright 2021. All Rights Reserved</p>
-        <div className="footer__socials">
-          <img src={facebook} alt="facebook icon" className="footer__icon" />
-          <img src={twitter} alt="twitter icon" className="footer__icon" />
-          <img src={instagram} alt="instagram icon" className="footer__icon" />
+        <div className="footer__bottom">
+          <p className="footer__copyright">
+            Copyright 2021. All Rights Reserved
+          </p>
+          <div className="footer__socials">
+            <img src={facebook} alt="facebook icon" className="footer__icon" />
+            <img src={twitter} alt="twitter icon" className="footer__icon" />
+            <img
+              src={instagram}
+              alt="instagram icon"
+              className="footer__icon"
+            />
+          </div>
         </div>
       </div>
     </footer>
