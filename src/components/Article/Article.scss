@@ -1,0 +1,28 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.article {
+    margin: 5rem auto;
+
+    &__container {
+        @include container;
+    }
+
+    &__img {
+        border-radius: 8px;
+    }
+
+    &__content {
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    &__heading {
+        margin: 2rem 0;
+        font-weight: 400;
+    }
+
+    &__heading-accent {
+        color: $accent-primary;
+    }
+}
