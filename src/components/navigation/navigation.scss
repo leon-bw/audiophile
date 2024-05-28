@@ -1,0 +1,39 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.nav {
+  @include container;
+
+  &__wrapper {
+    @include flex;
+    position: relative;
+    padding-top: 2.5rem;
+  }
+
+  &__img {
+    position: absolute;
+    height: 8rem;
+    top: 0;
+  }
+
+  &__content {
+    @include container;
+    @include flex(column, end, center);
+    text-align: center;
+    background-color: $bg-primary;
+    border-radius: 0.5rem;
+    padding-top: 4.5rem;
+  }
+
+  &__link {
+    @include flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    color: $text-primary-faint;
+    font-weight: 700;
+  }
+}

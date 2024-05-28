@@ -2,98 +2,97 @@
 @use "../../styles/partials/utilities/mixins" as *;
 
 .footer {
-    background-color: $bg-secondary;
-    text-align: center;
-    font-family: "Manrope";
+  background-color: $bg-secondary;
+  text-align: center;
+  font-family: "Manrope";
+
+  @include tablet-and-desktop {
+    text-align: left;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__headings {
+    @include desktop {
+      @include flex($justify-content: space-between);
+    }
+  }
+
+  &__logo {
+    margin: -2rem auto 3rem;
+    border-top: 5px solid $accent-primary;
+    padding-top: 3rem;
 
     @include tablet-and-desktop {
-        text-align: left;
+      margin: -2rem 0 1.5rem;
+    }
+  }
+
+  &__links {
+    @include tablet-and-desktop {
+      @include flex($justify-content: space-between);
+      margin-right: auto;
+      width: 25rem;
     }
 
-    &__container {
-        @include container;
+    @include desktop {
+      margin-left: auto;
+      margin-right: 0;
     }
+  }
 
-    &__headings {
-        @include desktop {
-            @include flex($justify-content: space-between);
-        }
+  &__link {
+    color: $text-secondary;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+
+    &:hover {
+      color: $accent-primary;
+      cursor: pointer;
     }
+  }
 
-    &__logo {
-        margin: -2rem auto 3rem;
-        border-top: 5px solid $accent-primary;
-        padding-top: 3rem;
-
-        @include tablet-and-desktop {
-            margin: -2rem 0 1.5rem;
-        }
-
+  &__text {
+    @include desktop {
+      width: 30rem;
     }
+  }
 
-    &__links {
+  &__text,
+  &__copyright {
+    margin: 2rem 0;
+    color: $text-secondary-faint;
 
-        @include tablet-and-desktop {
-            @include flex($justify-content: space-between);
-            margin-right: auto;
-            width: 25rem;
-        }
-
-        @include desktop {
-            margin-left: auto;
-            margin-right: 0;
-        }
+    @include tablet-and-desktop {
+      margin-bottom: 1rem;
     }
+  }
 
-    &__link {
-        color: $text-secondary;
-        margin: 1rem 0;
-        text-transform: uppercase;
-        font-weight: 400;
-        font-size: .9rem;
-
-        &:hover {
-            color: $accent-primary;
-            cursor: pointer;
-        }
+  &__bottom {
+    @include tablet-and-desktop {
+      @include flex($justify-content: space-between);
     }
+  }
 
-    &__text {
-        @include desktop {
-            width: 30rem;
-        }
+  &__socials {
+    @include flex;
+
+    @include desktop {
+      position: relative;
+      bottom: 4rem;
     }
+  }
 
-    &__text,
-    &__copyright {
-        margin: 2rem 0;
-        color: $text-primary-faint;
+  &__icon {
+    padding: 1rem 0.5rem;
 
-        @include tablet-and-desktop {
-            margin-bottom: 1rem;
-        }
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(74%) sepia(30%)
+        saturate(4424%) hue-rotate(327deg) brightness(91%) contrast(85%);
     }
-
-    &__bottom {
-        @include tablet-and-desktop {
-            @include flex($justify-content: space-between);
-        }
-    }
-
-    &__socials {
-        @include flex;
-
-        @include desktop {
-            position: relative;
-            bottom: 4rem;
-        }
-    }
-
-    &__icon {
-        padding: 1rem .5rem;
-
-        &:hover {
-            filter: brightness(0) saturate(100%) invert(74%) sepia(30%) saturate(4424%) hue-rotate(327deg) brightness(91%) contrast(85%);
-        }
-    }
+  }
 }
