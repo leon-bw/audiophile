@@ -1,0 +1,18 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.zx9 {
+  @include container;
+
+  &__container {
+    @include container;
+    @include flex(column);
+    background-color: $accent-primary;
+    border-radius: 0.5rem;
+    color: $text-secondary;
+  }
+
+  &__img {
+    background-image: url("../../assets/images/home/desktop/image-speaker-zx7.jpg");
+  }
+}
