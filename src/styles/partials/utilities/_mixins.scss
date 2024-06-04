@@ -25,6 +25,7 @@
   color: $text-secondary;
   height: 3rem;
   width: 10rem;
+  border: 1px solid $accent-primary;
 
   &:hover {
     background-color: $accent-secondary;
@@ -33,6 +34,7 @@
 }
 
 @mixin button-secondary {
+  text-transform: uppercase;
   color: $text-primary;
   height: 3rem;
   width: 10rem;

@@ -16,10 +16,29 @@
     background-size: cover;
     background-position: center top -5rem;
     background-repeat: no-repeat;
+
+    @include tablet-and-desktop {
+      gap: 2rem;
+    }
   }
 
   &__img {
     width: 50%;
     margin: 1rem;
+    max-width: 10rem;
+  }
+
+  &__text {
+    max-width: 20rem;
+    line-height: 2rem;
+  }
+
+  &__btn {
+    @include button-primary;
+    background-color: $text-primary;
+
+    &:hover {
+      background-color: $bg-mid;
+    }
   }
 }
