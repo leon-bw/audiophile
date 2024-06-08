@@ -6,18 +6,40 @@
 
     &__container {
         @include container;
+
+        @include desktop {
+            @include flex($direction: row-reverse);
+        }
     }
 
     &__img {
         border-radius: 8px;
-    }
+        background-image: url(../../assets/images/shared/tablet/image-best-gear.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        max-width: 100%;
+        height: 400px;
+
+        @include desktop {
+            width: 170rem;
+            height: 30rem;
+            background-position: center left 50%;
+            background-size: cover;           
+        }
+    } 
 
     &__content {
         text-align: center;
         line-height: 1.4;
+
+        @include desktop {
+            margin-right: 5rem;
+            text-align: left;
+        }
     }
 
-    &__heading {
+    &__heading {         
         margin: 2rem 0;
         font-weight: 400;
     }

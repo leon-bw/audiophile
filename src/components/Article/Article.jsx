@@ -1,19 +1,20 @@
 import "./Article.scss";
 import bestGear from "../../assets/images/shared/mobile/image-best-gear.jpg";
+import bestGearTab from "../../assets/images/shared/tablet/image-best-gear.jpg";
+import bestGearDesk from "../../assets/images/shared/desktop/image-best-gear.jpg";
 
 const Article = () => {
   return (
     <article className="article">
       <div className="article__container">
-        <img
-          src={bestGear}
-          alt="man with headphones on holding right ear cup"
+        <div
           className="article__img"
-        />
+          alt="man with headphones on holding right ear cup"
+        ></div>
         <div className="article__content">
           <h3 className="article__heading">
             Bringing you the{" "}
-            <span className="article__heading-accent">best</span> audio gear{" "}
+            <span className="article__heading-accent">best</span> audio gear
           </h3>
           <p className="article__body">
             Located at the heart of New York City, Audiophile is the premier
