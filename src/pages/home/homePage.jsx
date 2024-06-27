@@ -3,6 +3,8 @@ import Hero from "../../components/hero/hero";
 import Navigation from "../../components/navigation/navigation";
 import "./homePage.scss";
 import zx9 from "../../assets/images/home/desktop/image-speaker-zx9.png";
+import yx1 from "../../assets/images/home/desktop/image-earphones-yx1.jpg";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
@@ -20,6 +22,20 @@ export default function HomePage() {
           <button className="zx9__btn">see product</button>
         </div>
       </section>
+      <section className="yx1">
+        <div className="yx1__container">
+          <img src={yx1} alt="YX1 Earphones" className="yx1__img" />
+          <div className="yx1__content">
+            <h2 className="yx1__title">
+              yx1 Earphones
+            </h2>
+            <Link to={"/Earphones"}>
+              <div className="yx1__btn">see product</div>
+            </Link>
+          </div>
+        </div>
+      </section>
+      <Article/>
     </>
   );
 }
