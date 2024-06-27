@@ -1,0 +1,9 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.product-card {
+  &__new {
+    text-transform: uppercase;
+    color: $accent-secondary;
+  }
+}
