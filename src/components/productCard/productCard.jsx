@@ -1,5 +1,5 @@
 import "./productCard.scss";
-
+import image from "../../assets/images/product-yx1-earphones/mobile/image-category-page-preview.jpg";
 export default function ProductCard({
   category,
   categoryImage,
@@ -8,12 +8,15 @@ export default function ProductCard({
   description,
 }) {
   const { mobile, tablet, desktop } = categoryImage;
+  console.log(mobile);
 
   return (
     <article className="product-card">
       <div className="product-card__wrapper">
         <img
-          src={mobile}
+          // src="../../assets/images/product-yx1-earphones/mobile/image-category-page-preview.jpg"
+          // src={mobile}
+          // src={image}
           alt={`${category} image`}
           className="product-card__img--mobile"
         />
