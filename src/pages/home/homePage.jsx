@@ -22,20 +22,26 @@ export default function HomePage() {
           <button className="zx9__btn">see product</button>
         </div>
       </section>
+      <section className="zx7">
+        <div className="zx7__container">
+          <h2 className="zx7__title">zx7 speaker</h2>
+          <Link to={"/Speakers"}>
+            <div className="btn">see product</div>
+          </Link>
+        </div>
+      </section>
       <section className="yx1">
         <div className="yx1__container">
           <img src={yx1} alt="YX1 Earphones" className="yx1__img" />
           <div className="yx1__content">
-            <h2 className="yx1__title">
-              yx1 Earphones
-            </h2>
+            <h2 className="yx1__title">yx1 Earphones</h2>
             <Link to={"/Earphones"}>
-              <div className="yx1__btn">see product</div>
+              <div className="btn">see product</div>
             </Link>
           </div>
         </div>
       </section>
-      <Article/>
+      <Article />
     </>
   );
 }

@@ -84,16 +84,49 @@
     font-size: 1.9rem;
     font-weight: 500;
   }
+}
 
-  &__btn {
-    border: 2px solid $bg-secondary;
-    padding: 1rem;
-    text-transform: uppercase;
-    margin-left: auto;
+.zx7 {
+  @include container;
 
-    &:hover {
-      background-color: $bg-secondary;
-      color: $text-secondary;
+  &__container {
+    @include flex($direction: column, $align-items: flex-start);
+    gap: 2rem;
+    background-image: url("../../assets/images/home/mobile/image-speaker-zx7.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8rem 2rem;
+    border-radius: .5rem;
+
+    @include tablet-and-desktop {
+      background-image: url("../../assets/images/home/tablet/image-speaker-zx7.jpg");
+      background-size: center;
+      padding: 8rem 3rem;
     }
+
+    @include desktop {
+      background-image: url("../../assets/images/home/desktop/image-speaker-zx7.jpg");
+      background-position: right;
+      background-size: contain;
+      padding: 5rem 3rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}
+
+.btn {
+  border: 2px solid $bg-secondary;
+  padding: 1rem;
+  text-transform: uppercase;
+  margin-left: auto;
+
+  &:hover {
+    background-color: $bg-secondary;
+    color: $text-secondary;
   }
 }
