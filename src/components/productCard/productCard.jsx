@@ -1,6 +1,7 @@
 import "./productCard.scss";
-import image from "../../assets/images/product-yx1-earphones/mobile/image-category-page-preview.jpg";
+
 export default function ProductCard({
+  id,
   category,
   categoryImage,
   newProduct,
@@ -8,15 +9,17 @@ export default function ProductCard({
   description,
 }) {
   const { mobile, tablet, desktop } = categoryImage;
-  console.log(mobile);
 
+  console.log(id);
   return (
-    <article className="product-card">
-      <div className="product-card__wrapper">
+    <article
+      className={
+        id % 2 === 0 ? "product-card" : "product-card product-card--reversed"
+      }
+    >
+      <div className="product-card__wrapper product-card__wrapper--img">
         <img
-          // src="../../assets/images/product-yx1-earphones/mobile/image-category-page-preview.jpg"
-          // src={mobile}
-          // src={image}
+          src={mobile}
           alt={`${category} image`}
           className="product-card__img--mobile"
         />
@@ -31,10 +34,11 @@ export default function ProductCard({
           className="product-card__img--desktop"
         />
       </div>
-      <div className="product-card__wrapper">
+      <div className="product-card__wrapper product-card__wrapper--content">
         {newProduct && <p className="product-card__new">NEW PRODUCT</p>}
         <h5 className="product-card__name">{name}</h5>
         <p className="product-card__description">{description}</p>
+        <button className="product-card__btn">see product</button>
       </div>
     </article>
   );

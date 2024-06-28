@@ -18,6 +18,7 @@ export default function CategoryPage({ category }) {
         <ProductCard
           category={category}
           key={item.id}
+          id={item.id}
           categoryImage={item.categoryImage}
           newProduct={item.new}
           name={item.name}
