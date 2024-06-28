@@ -1,0 +1,17 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.banner {
+  @include flex;
+  background-color: $bg-secondary;
+
+  &__title {
+    text-transform: uppercase;
+    color: $text-secondary;
+    margin: 2rem auto;
+
+    @include tablet-and-desktop {
+      margin: 5rem auto;
+    }
+  }
+}
