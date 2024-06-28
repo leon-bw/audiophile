@@ -2,8 +2,81 @@
 @use "../../styles/partials/utilities/mixins" as *;
 
 .product-card {
+  @include container;
+  @include flex(column);
+  gap: 1rem;
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  &:nth-child(2n) {
+    @include desktop {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__wrapper {
+    @include flex(column);
+    text-align: center;
+    gap: 1rem;
+
+    @include desktop {
+      text-align: left;
+      align-items: flex-start;
+    }
+
+    &--img {
+      @include desktop {
+        width: 45%;
+      }
+    }
+
+    &--content {
+      @include desktop {
+        width: 35%;
+      }
+    }
+  }
+
+  &__img {
+    &--mobile {
+      @include tablet-and-desktop {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include tablet-and-desktop {
+        display: block;
+      }
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+
   &__new {
     text-transform: uppercase;
     color: $accent-secondary;
+    letter-spacing: 0.75rem;
+  }
+
+  &__btn {
+    @include button-primary;
   }
 }
