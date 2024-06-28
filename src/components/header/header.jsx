@@ -16,13 +16,13 @@ export default function Header() {
           <Link to={"/"} className="header__nav-link">
             <p className="header__nav-text">HOME</p>
           </Link>
-          <Link to={"/"} className="header__nav-link">
+          <Link to={"/headphones"} className="header__nav-link">
             <p className="header__nav-text">HEADPHONES</p>
           </Link>
-          <Link to={"/"} className="header__nav-link">
+          <Link to={"/speakers"} className="header__nav-link">
             <p className="header__nav-text">SPEAKERS</p>
           </Link>
-          <Link to={"/"} className="header__nav-link">
+          <Link to={"/earphones"} className="header__nav-link">
             <p className="header__nav-text">EARPHONES</p>
           </Link>
         </div>

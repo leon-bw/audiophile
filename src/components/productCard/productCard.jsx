@@ -12,11 +12,7 @@ export default function ProductCard({
 
   console.log(id);
   return (
-    <article
-      className={
-        id % 2 === 0 ? "product-card" : "product-card product-card--reversed"
-      }
-    >
+    <article className="product-card">
       <div className="product-card__wrapper product-card__wrapper--img">
         <img
           src={mobile}
