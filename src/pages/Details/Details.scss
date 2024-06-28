@@ -1,0 +1,8 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.details {
+    &__container {
+        @include container;
+    }
+}
