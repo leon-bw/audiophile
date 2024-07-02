@@ -1,0 +1,47 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.form {
+  @include container;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  @include flex(column, start, start);
+  gap: 1.5rem;
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__subheader {
+    @include subheader;
+    margin-bottom: 1rem;
+  }
+
+  &__container {
+    @include flex(row, start);
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @include tablet-and-desktop {
+      gap: 2rem;
+    }
+  }
+
+  &__wrapper {
+    @include flex(column, start, start);
+    width: 100%;
+    gap: 0.25rem;
+
+    @include tablet-and-desktop {
+      width: calc(50% - 1rem);
+    }
+  }
+
+  &__label {
+    text-transform: capitalize;
+  }
+
+  &__input {
+    @include form-field;
+  }
+}

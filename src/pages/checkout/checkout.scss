@@ -3,9 +3,11 @@
 
 .checkout {
   @include container;
+  background-color: $bg-primary;
 
   &__btn {
     border: none;
     background-color: transparent;
+    margin-bottom: 1rem;
   }
 }
