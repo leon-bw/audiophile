@@ -1,0 +1,11 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.checkout {
+  @include container;
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+  }
+}

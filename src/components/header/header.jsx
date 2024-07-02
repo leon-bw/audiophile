@@ -26,7 +26,9 @@ export default function Header() {
             <p className="header__nav-text">EARPHONES</p>
           </Link>
         </div>
-        <img src={cartIcon} alt="Shopping cart" className="header__cart" />
+        <Link to={"/checkout"} className="header__cart">
+          <img src={cartIcon} alt="Shopping cart" />
+        </Link>
       </section>
     </header>
   );
