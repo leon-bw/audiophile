@@ -35,13 +35,29 @@
     @include tablet-and-desktop {
       width: calc(50% - 1rem);
     }
+
+    // &--radio {
+    //   @include flex(column, start, start);
+    // }
   }
 
-  &__label {
-    text-transform: capitalize;
+  &__radio-option {
+    @include flex(row-reverse, start);
+    @include form-field;
+
+    &-wrapper {
+      @include flex(column);
+      width: 100%;
+      gap: 0.5rem;
+    }
   }
 
   &__input {
     @include form-field;
+
+    &-radio {
+      width: fit-content;
+      margin-right: 1rem;
+    }
   }
 }

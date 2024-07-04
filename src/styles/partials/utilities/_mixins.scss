@@ -65,7 +65,8 @@
   width: 100%;
 
   &:active,
-  &:focus {
+  &:focus,
+  &:hover {
     border: 2px solid $accent-primary;
   }
 
