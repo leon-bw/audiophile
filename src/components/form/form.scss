@@ -8,13 +8,14 @@
   @include flex(column, start, start);
   gap: 1.5rem;
 
-  &__title {
-    margin-bottom: 1rem;
-  }
-
   &__subheader {
     @include subheader;
     margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  &__section {
+    width: 100%;
   }
 
   &__container {
@@ -36,9 +37,22 @@
       width: calc(50% - 1rem);
     }
 
-    // &--radio {
-    //   @include flex(column, start, start);
-    // }
+    &--address {
+      width: 100%;
+    }
+
+    &--radio {
+      @include tablet-and-desktop {
+        @include flex(row, space-between, start);
+        width: 100%;
+      }
+    }
+  }
+
+  &__label--radio {
+    @include tablet-and-desktop {
+      width: calc(50% - 1rem);
+    }
   }
 
   &__radio-option {
@@ -49,6 +63,10 @@
       @include flex(column);
       width: 100%;
       gap: 0.5rem;
+
+      @include tablet-and-desktop {
+        width: calc(50% - 1rem);
+      }
     }
   }
 

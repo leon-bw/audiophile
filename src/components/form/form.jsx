@@ -74,7 +74,7 @@ export default function Form() {
         <section className="form__section">
           <p className="form__subheader">shipping info</p>
           <div className="form__container">
-            <div className="form__wrapper">
+            <div className="form__wrapper form__wrapper--address">
               <label htmlFor="address" className="form__label">
                 Your Address
               </label>
@@ -136,7 +136,7 @@ export default function Form() {
           <p className="form__subheader">payment details</p>
           <div className="form__container">
             <div className="form__wrapper form__wrapper--radio">
-              <p className="form__label">Payment Method</p>
+              <p className="form__label form__label--radio">Payment Method</p>
               <div className="form__radio-option-wrapper">
                 <div className="form__radio-option">
                   <label htmlFor="payMethod1" className="form__label">
