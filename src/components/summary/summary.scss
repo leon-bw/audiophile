@@ -1,0 +1,40 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.summary {
+  @include container;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  @include flex(column, start, start);
+  gap: 1.5rem;
+
+  &__subtotal {
+    @include flex(column);
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  &__content,
+  &__grand-total {
+    @include flex(row, space-between);
+    width: 100%;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    color: $text-primary-faint;
+  }
+
+  &__cost {
+    font-weight: bold;
+
+    &--grand-total {
+      color: $accent-primary;
+    }
+  }
+
+  &__btn {
+    @include button-primary;
+    width: 100%;
+  }
+}

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./checkout.scss";
 import Form from "../../components/form/form";
+import Summary from "../../components/summary/summary";
 
 export default function CheckoutPage() {
   const nav = useNavigate();
@@ -16,7 +17,7 @@ export default function CheckoutPage() {
         <p>Go Back</p>
       </button>
       <Form />
-      <section className="summary"></section>
+      <Summary />
     </main>
   );
 }
