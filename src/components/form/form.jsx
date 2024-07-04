@@ -17,7 +17,7 @@ export default function Form() {
 
   const changeHandler = (event) => {
     const { name, value } = event.target;
-    setFormData((prevformData) => ({ ...prevformData, [name]: value }));
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
   return (

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import "./summary.scss";
+import CartItem from "../cartItem/cartItem";
 
 export default function Summary() {
   const [cartContents, setCartContents] = useState([
-    { id: "3", quantity: 1 },
-    { id: "2", quantity: 2 },
-    { id: "1", quantity: 1 },
+    { id: 0, product_id: 4, quantity: 1 },
+    { id: 1, product_id: 2, quantity: 2 },
+    { id: 2, product_id: 1, quantity: 1 },
   ]);
 
   // useEffect to setCartContents from session storage
@@ -13,7 +14,16 @@ export default function Summary() {
   return (
     <section className="summary">
       <h4 className="summary__title">summary</h4>
-      <div className="summary__list"></div>
+      <div className="summary__list">
+        {cartContents.length &&
+          cartContents.map((item) => (
+            <CartItem
+              key={item.id}
+              product_id={item.product_id}
+              quantity={item.quantity}
+            />
+          ))}
+      </div>
       <div className="summary__subtotal">
         <div className="summary__content">
           <p className="summary__text">total</p>

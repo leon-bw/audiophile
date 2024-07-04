@@ -8,6 +8,7 @@
   @include flex(column, start, start);
   gap: 1.5rem;
 
+  &__list,
   &__subtotal {
     @include flex(column);
     gap: 0.5rem;
