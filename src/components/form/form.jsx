@@ -148,7 +148,11 @@ export default function Form() {
                   value="eMoney"
                   onChange={changeHandler}
                   checked={formData.payMethod === "eMoney"}
-                  className="form__input-radio"
+                  className={
+                    formData.payMethod === "eMoney"
+                      ? "form__input-radio form__input-radio--selected"
+                      : "form__input-radio"
+                  }
                 />
               </div>
               <div className="form__radio-option">
@@ -162,7 +166,11 @@ export default function Form() {
                   value="cash"
                   onChange={changeHandler}
                   checked={formData.payMethod === "cash"}
-                  className="form__input-radio"
+                  className={
+                    formData.payMethod === "cash"
+                      ? "form__input-radio form__input-radio--selected"
+                      : "form__input-radio"
+                  }
                 />
               </div>
             </div>

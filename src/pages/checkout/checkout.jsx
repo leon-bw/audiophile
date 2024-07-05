@@ -16,8 +16,10 @@ export default function CheckoutPage() {
       >
         <p>Go Back</p>
       </button>
-      <Form />
-      <Summary />
+      <section className="checkout__content">
+        <Form />
+        <Summary />
+      </section>
     </main>
   );
 }

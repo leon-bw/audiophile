@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import myData from "../../assets/data.json";
 import "./summary.scss";
 import CartItem from "../cartItem/cartItem";
 
@@ -41,7 +40,7 @@ export default function Summary() {
         <div className="summary__content">
           <p className="summary__text">total</p>
           <p className="summary__cost">
-            {cartContents.length ? `$ ${calcTotal()}` : `$ 0`}
+            {cartContents.length ? `$ ${calcTotal().toLocaleString()}` : `$ 0`}
           </p>
         </div>
         <div className="summary__content">
@@ -53,14 +52,18 @@ export default function Summary() {
         <div className="summary__content">
           <p className="summary__text">vat (included)</p>
           <p className="summary__cost">
-            {cartContents.length ? `$ ${Math.floor(calcTotal() * 0.2)}` : `$ 0`}
+            {cartContents.length
+              ? `$ ${Math.floor(calcTotal() * 0.2).toLocaleString()}`
+              : `$ 0`}
           </p>
         </div>
       </div>
       <div className="summary__grand-total">
         <p className="summary__text">grand total</p>
         <p className="summary__cost summary__cost--grand-total">
-          {cartContents.length ? `$ ${calcTotal() + 50}` : `$ 0`}
+          {cartContents.length
+            ? `$ ${(calcTotal() + 50).toLocaleString()}`
+            : `$ 0`}
         </p>
       </div>
       <button type="submit" form="checkout" className="summary__btn">

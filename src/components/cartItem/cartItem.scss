@@ -9,6 +9,14 @@
   &__img {
     width: 25%;
     border-radius: 0.5rem;
+
+    @include tablet-and-desktop {
+      width: 10%;
+    }
+
+    @include desktop {
+      width: 25%;
+    }
   }
 
   &__details {

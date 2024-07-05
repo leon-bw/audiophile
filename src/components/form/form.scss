@@ -8,6 +8,10 @@
   @include flex(column, start, start);
   gap: 1.5rem;
 
+  @include desktop {
+    width: 67%;
+  }
+
   &__subheader {
     @include subheader;
     margin-bottom: 1rem;
@@ -76,6 +80,7 @@
     &-radio {
       width: fit-content;
       margin-right: 1rem;
+      accent-color: $accent-primary;
     }
   }
 }

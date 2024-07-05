@@ -8,6 +8,10 @@
   @include flex(column, start, start);
   gap: 1.5rem;
 
+  @include desktop {
+    width: 33%;
+  }
+
   &__list,
   &__subtotal {
     @include flex(column);
