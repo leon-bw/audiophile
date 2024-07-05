@@ -4,6 +4,7 @@ import Header from "./components/header/header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/home/homePage";
 import CategoryPage from "./pages/category/categoryPage";
+import Details from "./pages/Details/Details";
 
 function App() {
   return (
@@ -23,10 +24,8 @@ function App() {
           path="/earphones"
           element={<CategoryPage category="earphones" />}
         />
+        <Route path="/headphones/:headphoneId" element={<Details />} />
       </Routes>
-        {/* <Route path="/headphones/:headphoneId" element={<Details />} />
-        <Route path="/speakers/:speakerId" element={<Details />} />
-        <Route path="/earphones" element={<Details />} /> */}
       <Footer />
     </BrowserRouter>
   );

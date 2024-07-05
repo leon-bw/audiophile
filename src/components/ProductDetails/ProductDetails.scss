@@ -1,0 +1,91 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.product-details {
+  &__container {
+    @include container;
+  }
+
+  &__img {
+    &--mobile {
+      @include tablet-and-desktop {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include tablet-and-desktop {
+        display: block;
+      }
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__new {
+    text-transform: uppercase;
+    letter-spacing: 0.75rem;
+    color: $accent-primary;
+  }
+
+  &__name {
+    font-size: 2rem;
+  }
+
+  &__description,
+  &__price,
+  &__name,
+  &__new,
+  &__heading {
+    margin: 1rem 0;
+  }
+
+  &__price {
+    font-weight: 700;
+  }
+
+  &__cart {
+    background-color: $bg-primary-faint;
+
+    &--decrease,
+    &--increase {
+        color: $text-primary;
+    }
+
+    &--quantity {
+        color: $text-primary;
+    }
+
+    &--add {
+        background-color: $accent-primary;
+        color: $text-secondary;
+        text-transform: uppercase;
+    }
+  }
+
+  &__box-list {
+    list-style: none;
+  }
+
+  &__box-item {
+    margin: 1rem 0;
+    font-weight: 300;
+
+    &--content {
+        color: $accent-primary;
+        font-weight: 700;
+    }
+  }
+}
