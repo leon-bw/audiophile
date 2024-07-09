@@ -1,0 +1,26 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.checkout {
+  @include container;
+  background-color: $bg-primary;
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    @include flex(column);
+    gap: 1rem;
+
+    @include tablet-and-desktop {
+      gap: 2rem;
+    }
+
+    @include desktop {
+      @include flex(row, center, start);
+    }
+  }
+}

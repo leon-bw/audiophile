@@ -59,17 +59,19 @@
 }
 
 @mixin form-field {
-  padding: 0.5rem auto;
-  border-radius: 1rem;
-  border: 1px solid $text-placeholder;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid $text-primary-faint;
+  width: 100%;
 
   &:active,
-  &:focus {
-    outline: 1px solid $accent-primary;
+  &:focus,
+  &:hover {
+    border: 2px solid $accent-primary;
   }
 
   &::placeholder {
-    color: $text-placeholder;
+    color: $text-primary-faint;
   }
 }
 
@@ -78,4 +80,9 @@
   box-shadow: 0 0 5px 5px $bg-transparent;
   border-radius: 1rem;
   padding: 0.25rem;
+}
+
+@mixin subheader {
+  text-transform: uppercase;
+  color: $accent-primary;
 }

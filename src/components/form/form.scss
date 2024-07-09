@@ -1,0 +1,86 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.form {
+  @include container;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  @include flex(column, start, start);
+  gap: 1.5rem;
+
+  @include desktop {
+    width: 67%;
+  }
+
+  &__subheader {
+    @include subheader;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  &__section {
+    width: 100%;
+  }
+
+  &__container {
+    @include flex(row, start);
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @include tablet-and-desktop {
+      gap: 2rem;
+    }
+  }
+
+  &__wrapper {
+    @include flex(column, start, start);
+    width: 100%;
+    gap: 0.25rem;
+
+    @include tablet-and-desktop {
+      width: calc(50% - 1rem);
+    }
+
+    &--address {
+      width: 100%;
+    }
+
+    &--radio {
+      @include tablet-and-desktop {
+        @include flex(row, space-between, start);
+        width: 100%;
+      }
+    }
+  }
+
+  &__label--radio {
+    @include tablet-and-desktop {
+      width: calc(50% - 1rem);
+    }
+  }
+
+  &__radio-option {
+    @include flex(row-reverse, start);
+    @include form-field;
+
+    &-wrapper {
+      @include flex(column);
+      width: 100%;
+      gap: 0.5rem;
+
+      @include tablet-and-desktop {
+        width: calc(50% - 1rem);
+      }
+    }
+  }
+
+  &__input {
+    @include form-field;
+
+    &-radio {
+      width: fit-content;
+      margin-right: 1rem;
+      accent-color: $accent-primary;
+    }
+  }
+}
