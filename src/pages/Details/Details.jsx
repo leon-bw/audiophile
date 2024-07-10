@@ -12,7 +12,7 @@ export default function Details() {
   const { headphoneId } = useParams();
 
   useEffect(() => {
-    console.log("Fetching product with ID:", headphoneId);
+    // console.log("Fetching product with ID:", headphoneId);
     const fetchProduct = () => {
       const foundProduct = Data.find((item) => item.id === parseInt(headphoneId));
       console.log("Found product:", foundProduct);

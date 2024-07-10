@@ -2,12 +2,9 @@
 @use "../../styles/partials/utilities/mixins" as *;
 
 .product-details {
-  &__container {
-    @include container;
-  }
-
   &__img {
     &--mobile {
+      border-radius: 0.5rem;
       @include tablet-and-desktop {
         display: none;
       }
@@ -17,6 +14,7 @@
       display: none;
 
       @include tablet-and-desktop {
+        border-radius: 0.5rem;
         display: block;
       }
 
@@ -29,6 +27,7 @@
       display: none;
 
       @include desktop {
+        border-radius: 0.5rem;
         display: block;
       }
     }
@@ -38,6 +37,7 @@
     text-transform: uppercase;
     letter-spacing: 0.75rem;
     color: $accent-primary;
+    font-size: 0.8rem;
   }
 
   &__name {
@@ -49,30 +49,51 @@
   &__name,
   &__new,
   &__heading {
-    margin: 1rem 0;
+    margin: 2rem 0;
   }
 
   &__price {
     font-weight: 700;
+    letter-spacing: 0.25rem;
   }
 
   &__cart {
-    background-color: $bg-primary-faint;
-
     &--decrease,
     &--increase {
-        color: $text-primary;
+      background-color: $bg-primary;
+      color: $text-primary;
+      padding: 0.75rem;
+      border: none;
     }
 
     &--quantity {
-        color: $text-primary;
+      color: $text-primary;
+      padding: 0.75rem;
+      width: 2rem;
+      border: none;
+      background-color: $bg-primary;
+      text-align: center;
     }
 
     &--add {
-        background-color: $accent-primary;
-        color: $text-secondary;
-        text-transform: uppercase;
+      background-color: $accent-primary;
+      color: $text-secondary;
+      text-transform: uppercase;
+      padding: 0.75rem 1.5rem;
+      margin-left: 2rem;
+      border: none;
+      font-size: 0.9rem;
     }
+  }
+
+  &__heading {
+    margin: 5rem 0 2rem;
+    font-size: 1.5rem;
+  }
+
+  &__description,
+  &__features {
+    line-height: 1.4;
   }
 
   &__box-list {
@@ -84,8 +105,9 @@
     font-weight: 300;
 
     &--content {
-        color: $accent-primary;
-        font-weight: 700;
+      color: $accent-primary;
+      font-weight: 700;
+      margin-right: 1rem;
     }
   }
 }

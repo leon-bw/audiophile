@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import "./ProductDetails.scss";
+import Gallery from "../Gallery/Gallery";
 
 const ProductDetails = ({
   id,
@@ -13,6 +14,10 @@ const ProductDetails = ({
   includes,
 }) => {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("Image prop:", image);
+  }, [image]);
 
   const increment = (e) => {
     e.preventDefault();
@@ -35,9 +40,9 @@ const ProductDetails = ({
   const { mobile, tablet, desktop } = image;
 
   const formattedFeatures = features.split("\n").map((line, index) => (
-    <React.Fragment key={index}>
-      {line} <br />
-    </React.Fragment>
+    <>
+      {line} <br key={index} />
+    </>
   ));
 
   return (
@@ -64,7 +69,7 @@ const ProductDetails = ({
           {newProduct && <p className="product-details__new">new product</p>}
           <h2 className="product-details__name">{name}</h2>
           <p className="product-details__description">{description}</p>
-          <p className="product-details__price">${" "}{price}</p>
+          <p className="product-details__price">$ {price}</p>
           <form className="product-details__cart">
             <button
               className="product-details__cart--decrease"
@@ -91,16 +96,18 @@ const ProductDetails = ({
           <h3 className="product-details__heading">In the box</h3>
           <ul className="product-details__box-list">
             {includes &&
-              includes.map((item) => {
+              includes.map((product) => {
                 return (
-                  <li className="product-details__box-item" key={item.id}>
-                    {" "}
-                    <span className="product-details__box-item--content"> {item.quantity}x </span> {item.item}
+                  <li className="product-details__box-item" key={product.id}>
+                    <span className="product-details__box-item--content">
+                      {product.quantity}x{" "}
+                    </span>
+                    {product.item}
                   </li>
                 );
               })}
           </ul>
-          {/* Gallery Component */}
+          {/* <Gallery /> */}
           {/* Others Component */}
         </div>
       </div>

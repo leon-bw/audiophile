@@ -2,5 +2,5 @@
 @use "../../styles/partials/utilities/mixins" as *;
 
 .gallery {
-
+    @include container;
 }
