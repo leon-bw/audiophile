@@ -1,49 +1,58 @@
 import "./Gallery.scss";
+import React from "react";
 
-const Gallery = ({ image }) => {
-  const { first, second, third } = image;
+const Gallery = ({ gallery }) => {
+  const { first, second, third } = gallery;
 
   return (
     <section className="gallery">
       <div className="gallery__container">
         <div className="gallery__small-img">
-          <img src={first.mobile} alt="" className="gallery__img-one--mobile" />
-          <img src={first.tablet} alt="" className="gallery__img-one--tablet" />
+          <img
+            src={first.mobile}
+            alt={`${name}`}
+            className="gallery__img-one--mobile"
+          />
+          <img
+            src={first.tablet}
+            alt={`${name}`}
+            className="gallery__img-one--tablet"
+          />
           <img
             src={first.desktop}
-            alt=""
+            alt={`${name}`}
             className="gallery__img-one--desktop"
           />
           <img
             src={second.mobile}
-            alt=""
+            alt={`${name}`}
             className="gallery__img-two--mobile"
           />
           <img
             src={second.tablet}
-            alt=""
+            alt={`${name}`}
             className="gallery__img-two--tablet"
           />
           <img
             src={second.desktop}
-            alt=""
+            alt={`${name}`}
             className="gallery__img-two--desktop"
           />
         </div>
         <div className="gallery__large-img">
           <img
             src={third.mobile}
-            alt=""
+            alt={`${name}`}
             className="gallery__img-three--mobile"
           />
           <img
             src={third.tablet}
-            alt=""
+            alt={`${name}`}
             className="gallery__img-three--tablet"
           />
           <img
             src={third.desktop}
-            alt=""
+            alt={`${name}`}
             className="gallery__img-three--desktop"
           />
         </div>

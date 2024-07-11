@@ -108,7 +108,6 @@ const ProductDetails = ({
               })}
           </ul>
           {/* <Gallery /> */}
-          {/* Others Component */}
         </div>
       </div>
     </section>
