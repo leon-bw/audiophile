@@ -34,7 +34,6 @@
     }
 
     &-container {
-      @include container;
       background-color: $text-secondary;
       border-radius: 0 0 0.5rem 0.5rem;
     }
