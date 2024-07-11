@@ -21,6 +21,25 @@
     }
   }
 
+  &__dropdown {
+    position: absolute;
+    top: 5.5rem;
+    bottom: 0;
+    background-color: $text-primary-faint;
+    width: 100%;
+    z-index: 1;
+
+    @include desktop {
+      display: none;
+    }
+
+    &-container {
+      @include container;
+      background-color: $text-secondary;
+      border-radius: 0 0 0.5rem 0.5rem;
+    }
+  }
+
   &__nav {
     display: none;
 
