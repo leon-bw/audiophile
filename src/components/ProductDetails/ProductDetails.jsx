@@ -14,7 +14,7 @@ const ProductDetails = ({
   features,
   includes,
   gallery,
-  others
+  others,
 }) => {
   const [count, setCount] = useState(0);
 
@@ -100,23 +100,30 @@ const ProductDetails = ({
               </form>
             </div>
           </div>
-          <h3 className="product-details__heading">Features</h3>
-          <p className="product-details__features">{formattedFeatures}</p>
-          <div className="product-details__box">
-          <h3 className="product-details__heading">In the box</h3>
-          <ul className="product-details__box-list">
-            {includes &&
-              includes.map((product) => {
-                return (
-                  <li className="product-details__box-item" key={product.id}>
-                    <span className="product-details__box-item--content">
-                      {product.quantity}x{" "}
-                    </span>
-                    {product.item}
-                  </li>
-                );
-              })}
-          </ul>
+          <div className="product-details__main">
+            <div className="product-details__text">
+              <h3 className="product-details__heading">Features</h3>
+              <p className="product-details__features">{formattedFeatures}</p>
+            </div>
+            <div className="product-details__box">
+              <h3 className="product-details__heading">In the box</h3>
+              <ul className="product-details__box-list">
+                {includes &&
+                  includes.map((product) => {
+                    return (
+                      <li
+                        className="product-details__box-item"
+                        key={product.id}
+                      >
+                        <span className="product-details__box-item--content">
+                          {product.quantity}x{" "}
+                        </span>
+                        {product.item}
+                      </li>
+                    );
+                  })}
+              </ul>
+            </div>
           </div>
           <Gallery gallery={gallery} name={name} />
           <Recommended others={others} />

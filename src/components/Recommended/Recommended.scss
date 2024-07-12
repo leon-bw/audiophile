@@ -54,6 +54,11 @@
     border: none;
     color: $text-secondary;
     text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $accent-secondary;
+      }
   }
 
   &__list {

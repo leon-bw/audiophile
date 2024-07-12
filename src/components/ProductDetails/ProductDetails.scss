@@ -79,12 +79,17 @@
       color: $text-primary;
       padding: 0.75rem;
       border: none;
+      cursor: pointer;
+
+      &:hover {
+        color: $accent-primary;
+      }
     }
 
     &--quantity {
       color: $text-primary;
-      padding: 0.75rem;
-      width: 2rem;
+      padding: 0.75rem 0 0.75rem 0.75rem;
+      width: 2.5rem;
       border: none;
       background-color: $bg-primary;
       text-align: center;
@@ -98,16 +103,30 @@
       margin-left: 2rem;
       border: none;
       font-size: 0.9rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $accent-secondary;
+      }
+    }
+  }
+
+  &__main {
+    @include desktop {
+        @include flex(row, flex-start);
+        gap: 7rem;
+    }
+  }
+
+  &__text {
+    @include desktop {
+        width: 60%;
     }
   }
 
   &__heading {
     margin: 5rem 0 2rem;
     font-size: 1.5rem;
-
-    @include tablet-and-desktop {
-        // margin: 0 0 2rem;
-    }
   }
 
   &__description,
@@ -117,12 +136,19 @@
 
   &__box {
     @include tablet-and-desktop {
-        @include flex;
+        @include flex(normal, space-between, baseline);
+    }
+
+    @include desktop {
+        @include flex(column, center, flex-start);
     }
   }
 
   &__box-list {
     list-style: none;
+    @include tablet-and-desktop {
+        margin-right: 3rem;
+    }
   }
 
   &__box-item {
