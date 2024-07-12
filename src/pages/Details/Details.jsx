@@ -1,20 +1,20 @@
 import Navigation from "../../components/navigation/navigation";
 import Article from "../../components/Article/Article";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "./Details.scss";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import Data from "../../assets/data.json";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function Details() {
   const [productData, setProductData] = useState(null);
-  const { headphoneId } = useParams();
+  const { productId } = useParams();
 
   useEffect(() => {
-    // console.log("Fetching product with ID:", headphoneId);
     const fetchProduct = () => {
-      const foundProduct = Data.find((item) => item.id === parseInt(headphoneId));
+      const foundProduct = Data.find(
+        (item) => item.id === parseInt(productId)
+      );
       console.log("Found product:", foundProduct);
       if (foundProduct) {
         setProductData(foundProduct);
@@ -24,7 +24,9 @@ export default function Details() {
     };
 
     fetchProduct();
-  }, [headphoneId]);
+  }, [productId]);
+
+  const nav = useNavigate();
 
   if (!productData) {
     return <div>Loading...</div>;
@@ -34,9 +36,14 @@ export default function Details() {
     <>
       <section className="details">
         <div className="details__container">
-          <div className="details__back-btn">
-            <Link to={"/headphones"}>Go Back</Link>
-          </div>
+          <button
+            className="details__back-btn"
+            onClick={() => {
+              nav(-1);
+            }}
+          >
+            Go Back
+          </button>
           <article className="details__product">
             <ProductDetails
               id={productData.id}
@@ -47,6 +54,8 @@ export default function Details() {
               features={productData.features}
               price={productData.price}
               includes={productData.includes}
+              gallery={productData.gallery}
+              others={productData.others}
             />
           </article>
         </div>

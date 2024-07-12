@@ -1,7 +1,7 @@
 import "./Gallery.scss";
 import React from "react";
 
-const Gallery = ({ gallery }) => {
+const Gallery = ({ gallery, name }) => {
   const { first, second, third } = gallery;
 
   return (
@@ -9,51 +9,51 @@ const Gallery = ({ gallery }) => {
       <div className="gallery__container">
         <div className="gallery__small-img">
           <img
-            src={first.mobile}
+            src={`.${first.mobile}`}
             alt={`${name}`}
-            className="gallery__img-one--mobile"
+            className="gallery__img--mobile"
           />
           <img
-            src={first.tablet}
+            src={`.${first.tablet}`}
             alt={`${name}`}
-            className="gallery__img-one--tablet"
+            className="gallery__img--tablet"
           />
           <img
-            src={first.desktop}
+            src={`.${first.desktop}`}
             alt={`${name}`}
-            className="gallery__img-one--desktop"
+            className="gallery__img--desktop"
           />
           <img
-            src={second.mobile}
+            src={`.${second.mobile}`}
             alt={`${name}`}
-            className="gallery__img-two--mobile"
+            className="gallery__img--mobile"
           />
           <img
-            src={second.tablet}
+            src={`.${second.tablet}`}
             alt={`${name}`}
-            className="gallery__img-two--tablet"
+            className="gallery__img--tablet"
           />
           <img
-            src={second.desktop}
+            src={`.${second.desktop}`}
             alt={`${name}`}
-            className="gallery__img-two--desktop"
+            className="gallery__img--desktop"
           />
         </div>
         <div className="gallery__large-img">
           <img
-            src={third.mobile}
+            src={`.${third.mobile}`}
             alt={`${name}`}
-            className="gallery__img-three--mobile"
+            className="gallery__img--mobile"
           />
           <img
-            src={third.tablet}
+            src={`.${third.tablet}`}
             alt={`${name}`}
-            className="gallery__img-three--tablet"
+            className="gallery__img--tablet"
           />
           <img
-            src={third.desktop}
+            src={`.${third.desktop}`}
             alt={`${name}`}
-            className="gallery__img-three--desktop"
+            className="gallery__img--desktop"
           />
         </div>
       </div>
