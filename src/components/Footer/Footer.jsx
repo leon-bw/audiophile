@@ -17,13 +17,13 @@ const Footer = () => {
             <Link to={"/"}>
               <h4 className="footer__link">Home</h4>
             </Link>
-            <Link to={"/Headphones"}>
+            <Link to={"/headphones"}>
               <h4 className="footer__link">Headphones</h4>
             </Link>
-            <Link to={"/Speakers"}>
+            <Link to={"/speakers"}>
               <h4 className="footer__link">Speakers</h4>
             </Link>
-            <Link to={"/Earphones"}>
+            <Link to={"/earphones"}>
               <h4 className="footer__link">Earphones</h4>
             </Link>
           </div>

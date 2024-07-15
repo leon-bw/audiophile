@@ -1,0 +1,163 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.product-details {
+  &__listing {
+    @include tablet-and-desktop {
+      @include flex;
+    }
+  }
+
+  &__content {
+    @include tablet-and-desktop {
+      width: 70%;
+      margin-left: 5rem;
+      @include flex(column, center, baseline);
+    }
+  }
+
+  &__img {
+    &--mobile {
+      border-radius: 0.5rem;
+      @include tablet-and-desktop {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include tablet-and-desktop {
+        border-radius: 0.5rem;
+        display: block;
+      }
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include desktop {
+        border-radius: 0.5rem;
+        display: block;
+      }
+    }
+  }
+
+  &__new {
+    text-transform: uppercase;
+    letter-spacing: 0.75rem;
+    color: $accent-primary;
+    font-size: 0.8rem;
+  }
+
+  &__name {
+    font-size: 2rem;
+  }
+
+  &__description,
+  &__price,
+  &__name,
+  &__new,
+  &__heading {
+    margin: 2rem 0;
+  }
+
+  &__price {
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+  }
+
+  &__cart {
+    &--decrease,
+    &--increase {
+      background-color: $bg-primary;
+      color: $text-primary;
+      padding: 0.75rem;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        color: $accent-primary;
+      }
+    }
+
+    &--quantity {
+      color: $text-primary;
+      padding: 0.75rem 0 0.75rem 0.75rem;
+      width: 2.5rem;
+      border: none;
+      background-color: $bg-primary;
+      text-align: center;
+    }
+
+    &--add {
+      background-color: $accent-primary;
+      color: $text-secondary;
+      text-transform: uppercase;
+      padding: 0.75rem 1.5rem;
+      margin-left: 2rem;
+      border: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $accent-secondary;
+      }
+    }
+  }
+
+  &__main {
+    @include desktop {
+      @include flex(row, flex-start);
+      gap: 7rem;
+    }
+  }
+
+  &__text {
+    @include desktop {
+      width: 60%;
+    }
+  }
+
+  &__heading {
+    margin: 5rem 0 2rem;
+    font-size: 1.5rem;
+  }
+
+  &__description,
+  &__features {
+    line-height: 1.4;
+  }
+
+  &__box {
+    @include tablet-and-desktop {
+      @include flex(normal, space-between, baseline);
+    }
+
+    @include desktop {
+      @include flex(column, center, flex-start);
+    }
+  }
+
+  &__box-list {
+    list-style: none;
+    @include tablet-and-desktop {
+      margin-right: 3rem;
+    }
+  }
+
+  &__box-item {
+    margin: 1rem 0;
+    font-weight: 300;
+
+    &--content {
+      color: $accent-primary;
+      font-weight: 700;
+      margin-right: 1rem;
+    }
+  }
+}

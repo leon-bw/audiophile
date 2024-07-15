@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/home/homePage";
 import CategoryPage from "./pages/category/categoryPage";
 import CheckoutPage from "./pages/checkout/checkout";
+import Details from "./pages/Details/Details";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           path="/earphones"
           element={<CategoryPage category="earphones" />}
         />
+        <Route path="/:productName/:productId" element={<Details />} />
         <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>
       <Footer />
