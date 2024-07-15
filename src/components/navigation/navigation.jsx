@@ -5,10 +5,16 @@ import arrowIcon from "../../assets/images/shared/desktop/icon-arrow-right.svg";
 import "./navigation.scss";
 import { Link } from "react-router-dom";
 
-export default function Navigation() {
+export default function Navigation({ setShowNav }) {
   return (
     <section className="nav">
-      <Link to={"/headphones"} className="nav__wrapper">
+      <Link
+        to={"/headphones"}
+        className="nav__wrapper"
+        onClick={() => {
+          setShowNav(false);
+        }}
+      >
         <img src={headphones} alt="Headphones" className="nav__img" />
         <div className="nav__content">
           <h6 className="nav__name">headphones</h6>
@@ -18,7 +24,13 @@ export default function Navigation() {
           </div>
         </div>
       </Link>
-      <Link to={"/speakers"} className="nav__wrapper">
+      <Link
+        to={"/speakers"}
+        className="nav__wrapper"
+        onClick={() => {
+          setShowNav(false);
+        }}
+      >
         <img src={speakers} alt="Speakers" className="nav__img" />
         <div className="nav__content">
           <h6 className="nav__name">speakers</h6>
@@ -28,7 +40,13 @@ export default function Navigation() {
           </div>
         </div>
       </Link>
-      <Link to={"/earphones"} className="nav__wrapper">
+      <Link
+        to={"/earphones"}
+        className="nav__wrapper"
+        onClick={() => {
+          setShowNav(false);
+        }}
+      >
         <img src={earphones} alt="Earphones" className="nav__img" />
         <div className="nav__content">
           <h6 className="nav__name">earphones</h6>

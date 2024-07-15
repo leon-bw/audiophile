@@ -19,7 +19,9 @@ export default function HomePage() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <button className="zx9__btn">see product</button>
+          <Link to={"/headphones"}>
+            <div className="zx9__btn">see product</div>
+          </Link>
         </div>
       </section>
       <section className="zx7">

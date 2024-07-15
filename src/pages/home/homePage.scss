@@ -36,6 +36,7 @@
   &__btn {
     @include button-primary;
     background-color: $text-primary;
+    padding: 1rem;
 
     &:hover {
       background-color: $bg-mid;
@@ -97,7 +98,7 @@
     background-position: center;
     background-repeat: no-repeat;
     padding: 8rem 2rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 
     @include tablet-and-desktop {
       background-image: url("../../assets/images/home/tablet/image-speaker-zx7.jpg");
