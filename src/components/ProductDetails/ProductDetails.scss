@@ -2,20 +2,19 @@
 @use "../../styles/partials/utilities/mixins" as *;
 
 .product-details {
-
-    &__listing {
-        @include tablet-and-desktop {
-            @include flex;
-        }
+  &__listing {
+    @include tablet-and-desktop {
+      @include flex;
     }
+  }
 
-    &__content {
-        @include tablet-and-desktop {
-            width: 70%;
-            margin-left: 5rem;
-            @include flex(column, center, baseline);
-        }
+  &__content {
+    @include tablet-and-desktop {
+      width: 70%;
+      margin-left: 5rem;
+      @include flex(column, center, baseline);
     }
+  }
 
   &__img {
     &--mobile {
@@ -113,14 +112,14 @@
 
   &__main {
     @include desktop {
-        @include flex(row, flex-start);
-        gap: 7rem;
+      @include flex(row, flex-start);
+      gap: 7rem;
     }
   }
 
   &__text {
     @include desktop {
-        width: 60%;
+      width: 60%;
     }
   }
 
@@ -136,18 +135,18 @@
 
   &__box {
     @include tablet-and-desktop {
-        @include flex(normal, space-between, baseline);
+      @include flex(normal, space-between, baseline);
     }
 
     @include desktop {
-        @include flex(column, center, flex-start);
+      @include flex(column, center, flex-start);
     }
   }
 
   &__box-list {
     list-style: none;
     @include tablet-and-desktop {
-        margin-right: 3rem;
+      margin-right: 3rem;
     }
   }
 

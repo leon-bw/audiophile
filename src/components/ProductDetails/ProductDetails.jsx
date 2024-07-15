@@ -109,11 +109,11 @@ const ProductDetails = ({
               <h3 className="product-details__heading">In the box</h3>
               <ul className="product-details__box-list">
                 {includes &&
-                  includes.map((product) => {
+                  includes.map((product, index) => {
                     return (
                       <li
                         className="product-details__box-item"
-                        key={product.id}
+                        key={index}
                       >
                         <span className="product-details__box-item--content">
                           {product.quantity}x{" "}

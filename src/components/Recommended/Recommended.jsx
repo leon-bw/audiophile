@@ -1,6 +1,13 @@
 import "./Recommended.scss";
+import { useNavigate } from "react-router-dom";
 
 const Recommended = ({ others }) => {
+  const nav = useNavigate();
+
+  const handleNav = (productId) => {
+    nav(`/${productName}/${productId}`);
+  };
+
   return (
     <section className="recommended">
       <div className="recommended__container">
@@ -26,7 +33,12 @@ const Recommended = ({ others }) => {
                     className="recommended__img recommended__img--desktop"
                   />
                   <h3 className="recommended__name">{item.name}</h3>
-                  <button className="recommended__btn">see product</button>
+                  <button
+                    className="recommended__btn"
+                    onClick={() => handleNav(item.name, item.slug)}
+                  >
+                    see product
+                  </button>
                 </li>
               );
             })}

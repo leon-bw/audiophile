@@ -11,5 +11,9 @@
         margin-bottom: 1.5rem;
         background: none;
         border: none;
+        &:hover {
+            color: $accent-primary;
+            cursor: pointer;
+        }
     }
 }
