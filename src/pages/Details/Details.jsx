@@ -10,12 +10,6 @@ export default function Details() {
   const [productData, setProductData] = useState(null);
   const { productId } = useParams();
 
-  //   [
-  //   { id: 0, product_id: 4, quantity: 1, price: 2999 },
-  //   { id: 1, product_id: 2, quantity: 2, price: 899 },
-  //   { id: 2, product_id: 1, quantity: 1, price: 599 },
-  //   ]
-
   useEffect(() => {
     const fetchProduct = () => {
       const foundProduct = Data.find((item) => item.id === parseInt(productId));

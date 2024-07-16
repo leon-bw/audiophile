@@ -9,7 +9,7 @@ export default function Summary() {
   });
 
   useEffect(() => {
-    sessionStorage.setItem("cartContents", JSON.stringify("cartContents"));
+    sessionStorage.setItem("cartContents", JSON.stringify(cartContents));
   }, [cartContents]);
 
   const calcTotal = () => {
@@ -26,14 +26,14 @@ export default function Summary() {
       <h4 className="summary__title">summary</h4>
       <div className="summary__list">
         {cartContents.length &&
-          cartContents.map((item) => (
+          cartContents.map((item, index) => (
             <CartItem
-              key={item.id}
-              id={item.id}
+              key={index}
               product_id={item.product_id}
               quantity={item.quantity}
               cartContents={cartContents}
               setCartContents={setCartContents}
+              price={item.price}
             />
           ))}
       </div>
