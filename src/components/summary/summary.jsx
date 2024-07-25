@@ -3,13 +3,14 @@ import "./summary.scss";
 import CartItem from "../cartItem/cartItem";
 
 export default function Summary() {
-  const [cartContents, setCartContents] = useState([
-    { id: 0, product_id: 4, quantity: 1, price: 2999 },
-    { id: 1, product_id: 2, quantity: 2, price: 899 },
-    { id: 2, product_id: 1, quantity: 1, price: 599 },
-  ]);
+  const [cartContents, setCartContents] = useState(() => {
+    const savedCart = sessionStorage.getItem("cartContents");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
 
-  // useEffect to setCartContents from session storage
+  useEffect(() => {
+    sessionStorage.setItem("cartContents", JSON.stringify(cartContents));
+  }, [cartContents]);
 
   const calcTotal = () => {
     let sum = 0;
@@ -25,14 +26,14 @@ export default function Summary() {
       <h4 className="summary__title">summary</h4>
       <div className="summary__list">
         {cartContents.length &&
-          cartContents.map((item) => (
+          cartContents.map((item, index) => (
             <CartItem
-              key={item.id}
-              id={item.id}
-              product_id={item.product_id}
+              key={index}
+              productId={item.productId}
               quantity={item.quantity}
               cartContents={cartContents}
               setCartContents={setCartContents}
+              price={item.price}
             />
           ))}
       </div>
