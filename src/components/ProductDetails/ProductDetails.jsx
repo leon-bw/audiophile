@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 import "./ProductDetails.scss";
 import Gallery from "../Gallery/Gallery";
@@ -34,6 +34,37 @@ const ProductDetails = ({
         return (prevCount = 0);
       }
     });
+  };
+
+  const [cartContents, setCartContents] = useState(() => {
+    const savedCart = sessionStorage.getItem("cartContents");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  useEffect(() => {
+    sessionStorage.setItem("cartContents", JSON.stringify(cartContents));
+  }, [cartContents]);
+
+  const addToCart = (newItem) => {
+    setCartContents((prevCartContents) => {
+      const existingItemIndex = prevCartContents.findIndex((item) => {
+        return item.productId === newItem.productId;
+      });
+      if (existingItemIndex !== -1) {
+        const updatedCartContents = [...prevCartContents];
+        updatedCartContents[existingItemIndex].quantity += newItem.quantity; //strictMode causes the quantity to increase by newItem.quantity twice
+        return updatedCartContents;
+      } else {
+        return [...prevCartContents, newItem];
+      }
+    });
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (count > 0) {
+      addToCart({ productId: id, quantity: count, price: price });
+    }
   };
 
   const { mobile, tablet, desktop } = image;
@@ -94,7 +125,10 @@ const ProductDetails = ({
                 >
                   +
                 </button>
-                <button className="product-details__cart--add">
+                <button
+                  className="product-details__cart--add"
+                  onClick={handleClick}
+                >
                   add to cart
                 </button>
               </form>
@@ -111,10 +145,7 @@ const ProductDetails = ({
                 {includes &&
                   includes.map((product, index) => {
                     return (
-                      <li
-                        className="product-details__box-item"
-                        key={index}
-                      >
+                      <li className="product-details__box-item" key={index}>
                         <span className="product-details__box-item--content">
                           {product.quantity}x{" "}
                         </span>

@@ -12,10 +12,7 @@ export default function Details() {
 
   useEffect(() => {
     const fetchProduct = () => {
-      const foundProduct = Data.find(
-        (item) => item.id === parseInt(productId)
-      );
-      console.log("Found product:", foundProduct);
+      const foundProduct = Data.find((item) => item.id === parseInt(productId));
       if (foundProduct) {
         setProductData(foundProduct);
       } else {
