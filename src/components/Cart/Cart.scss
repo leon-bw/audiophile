@@ -1,0 +1,22 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.cart {
+    &__header {
+        @include flex(center, space-between);
+    }
+
+    &__title {
+        font-weight: 500;
+    }
+
+    &__remove {
+        background: none;
+        border: none;
+        &:hover {
+            cursor: pointer;
+            color: $accent-primary;
+            text-decoration: underline;
+        }
+    }
+}
