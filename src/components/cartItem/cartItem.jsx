@@ -1,9 +1,8 @@
 import myData from "../../assets/data.json";
 import "./cartItem.scss";
 
-export default function CartItem({ product_id, quantity, price }) {
-  const filteredItem = myData.find((item) => item.id === product_id);
-  console.log(filteredItem);
+export default function CartItem({ productId, quantity, price }) {
+  const filteredItem = myData.find((item) => item.id === productId);
 
   return (
     <article className="cart-item">

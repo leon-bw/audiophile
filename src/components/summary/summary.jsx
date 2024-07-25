@@ -29,7 +29,7 @@ export default function Summary() {
           cartContents.map((item, index) => (
             <CartItem
               key={index}
-              product_id={item.product_id}
+              productId={item.productId}
               quantity={item.quantity}
               cartContents={cartContents}
               setCartContents={setCartContents}
