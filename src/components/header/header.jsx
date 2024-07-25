@@ -5,13 +5,20 @@ import cartIcon from "../../assets/images/shared/desktop/icon-cart.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Navigation from "../navigation/navigation";
+import Modal from "../Modal/Modal";
 
 export default function Header() {
   const [showNav, setShowNav] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
+  const handleClick = () => {
+    setModalOpen(false);
+  }
+  
   const toggleNav = () => {
     setShowNav(!showNav);
   };
+
 
   return (
     <header className="header">
@@ -46,9 +53,14 @@ export default function Header() {
             <p className="header__nav-text">EARPHONES</p>
           </Link>
         </div>
-        <Link to={"/checkout"} className="header__cart">
-          <img src={cartIcon} alt="Shopping cart" />
-        </Link>
+        <div className="header__cart">
+          <img src={cartIcon} alt="Shopping cart" onClick={()=> setModalOpen(true) } />
+          { modalOpen && <Modal onSubmit={handleClick} close={handleClick}
+          title={`Cart`}
+          content={
+            `This is content`
+          }/> }
+        </div>
       </section>
     </header>
   );
