@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./productCard.scss";
 
 export default function ProductCard({
@@ -33,7 +34,9 @@ export default function ProductCard({
         {newProduct && <p className="product-card__new">NEW PRODUCT</p>}
         <h5 className="product-card__name">{name}</h5>
         <p className="product-card__description">{description}</p>
-        <button className="product-card__btn">see product</button>
+        <Link to={`/${category}/${id}`}>
+          <button className="product-card__btn">see product</button>
+        </Link>
       </div>
     </article>
   );
