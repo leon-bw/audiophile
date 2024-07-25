@@ -10,7 +10,6 @@ export default function ProductCard({
 }) {
   const { mobile, tablet, desktop } = categoryImage;
 
-  console.log(id);
   return (
     <article className="product-card">
       <div className="product-card__wrapper product-card__wrapper--img">
