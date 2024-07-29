@@ -18,5 +18,24 @@
             color: $accent-primary;
             text-decoration: underline;
         }
+        &--empty {
+            display: none;
+        }
+    }
+
+    &__content-item {
+        list-style: none;
+        margin: 2rem 0;
+        &--empty {
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
+
+    &__total {
+        &--empty {
+            display: none;
+        }
     }
 }

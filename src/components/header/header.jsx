@@ -15,17 +15,16 @@ export default function Header() {
 
   const handleClick = () => {
     setModalOpen(false);
-  }
+  };
 
   const handleSubmit = () => {
-    setModalOpen(false)
+    setModalOpen(false);
     navigate("/checkout");
-  }
-  
+  };
+
   const toggleNav = () => {
     setShowNav(!showNav);
   };
-
 
   return (
     <header className="header">
@@ -61,10 +60,19 @@ export default function Header() {
           </Link>
         </div>
         <div className="header__cart">
-          <img src={cartIcon} alt="Shopping cart" onClick={()=> setModalOpen(true) } />
-          { modalOpen && <Modal onSubmit={handleSubmit} close={handleClick}
-          content={<Cart />}
-          children={`checkout`}/> }
+          <img
+            src={cartIcon}
+            alt="Shopping cart"
+            onClick={() => setModalOpen(true)}
+          />
+          {modalOpen && (
+            <Modal
+              onSubmit={handleSubmit}
+              close={handleClick}
+              content={<Cart />}
+              children={`checkout`}
+            />
+          )}
         </div>
       </section>
     </header>

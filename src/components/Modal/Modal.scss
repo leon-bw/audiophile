@@ -10,18 +10,27 @@
     height: 100dvh;
     background-color: $text-primary-faint;
     z-index: 1;
-    margin: 5rem 0;
-    padding: 0 2rem;
+    padding: 7rem 2rem 0;
+
+    // @include tablet-and-desktop {
+    // }
 
     &__container {
         @include container;
         border-radius: 10px;
         background-color: $bg-primary;
+
+        @include tablet-and-desktop {
+            width: 50%;
+            margin: 0;
+            margin-left: auto;
+            padding: 2rem;
+        }
     }
 
-    &__content {
-        margin: 2rem 0;
-    }
+    // &__content {
+    //     margin: 2rem 0;
+    // }
 
     &__btn {
         margin-top: 1rem;
