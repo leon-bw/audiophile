@@ -10,9 +10,9 @@ const Cart = () => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-    useEffect(() => {
-      sessionStorage.setItem("cartContents", JSON.stringify(cartContents));
-    }, [cartContents]);
+  useEffect(() => {
+    sessionStorage.setItem("cartContents", JSON.stringify(cartContents));
+  }, [cartContents]);
 
   const calcTotal = () => {
     let sum = 0;
@@ -34,6 +34,7 @@ const Cart = () => {
   const handleRemoveAll = () => {
     sessionStorage.removeItem("cartContents");
     setCartContents([]);
+    window.location.reload();
   };
 
   //   const increment = (e) => {
