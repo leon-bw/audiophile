@@ -36,6 +36,16 @@ export default function Summary({ validateForm }) {
     return sum;
   };
 
+  const handleCheckoutClick = (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    } else {
+      setOrderOpen(true);
+    }
+  };
+
   return (
     <section className="summary">
       <h4 className="summary__title">summary</h4>
@@ -86,7 +96,7 @@ export default function Summary({ validateForm }) {
         type="submit"
         form="checkout"
         className="summary__btn"
-        onClick={() => setOrderOpen(true)}
+        onClick={handleCheckoutClick}
       >
         continue & pay
       </button>

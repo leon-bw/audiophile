@@ -1,20 +1,7 @@
 import { useState } from "react";
 import "./form.scss";
 
-export default function Form({ formErrors }) {
-  const [formData, setFormData] = useState({
-    userName: "",
-    email: "",
-    phone: "",
-    address: "",
-    postcode: "",
-    city: "",
-    country: "",
-    payMethod: "eMoney",
-    eNum: "",
-    ePin: "",
-  });
-
+export default function Form({ formErrors, formData, setFormData }) {
   const changeHandler = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));

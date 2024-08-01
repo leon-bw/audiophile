@@ -2,9 +2,23 @@ import { Link, useNavigate } from "react-router-dom";
 import "./checkout.scss";
 import Form from "../../components/form/form";
 import Summary from "../../components/summary/summary";
+import { useState } from "react";
 
 export default function CheckoutPage() {
   const nav = useNavigate();
+
+  const [formData, setFormData] = useState({
+    userName: "",
+    email: "",
+    phone: "",
+    address: "",
+    postcode: "",
+    city: "",
+    country: "",
+    payMethod: "eMoney",
+    eNum: "",
+    ePin: "",
+  });
 
   const [formErrors, setFormErrors] = useState({});
 
@@ -39,7 +53,11 @@ export default function CheckoutPage() {
         <p>Go Back</p>
       </button>
       <section className="checkout__content">
-        <Form formErrors={formErrors} />
+        <Form
+          formErrors={formErrors}
+          formData={formData}
+          setFormData={setFormData}
+        />
         <Summary validateForm={validateForm} />
       </section>
     </main>
