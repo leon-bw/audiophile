@@ -10,9 +10,9 @@ const Cart = () => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-    useEffect(() => {
-      sessionStorage.setItem("cartContents", JSON.stringify(cartContents));
-    }, [cartContents]);
+  useEffect(() => {
+    sessionStorage.setItem("cartContents", JSON.stringify(cartContents));
+  }, [cartContents]);
 
   const calcTotal = () => {
     let sum = 0;
@@ -34,32 +34,33 @@ const Cart = () => {
   const handleRemoveAll = () => {
     sessionStorage.removeItem("cartContents");
     setCartContents([]);
+    window.location.reload();
   };
 
-  //   const increment = (e) => {
-  //     e.preventDefault();
-  //     setCount(function (prevCount) {
-  //       return (prevCount += 1);
-  //     });
-  //   };
+    const increment = (e) => {
+      e.preventDefault();
+      setCount(function (prevCount) {
+        return (prevCount += 1);
+      });
+    };
 
-  //   const decrement = (e) => {
-  //     e.preventDefault();
-  //     setCount(function (prevCount) {
-  //       if (prevCount > 0) {
-  //         return (prevCount -= 1);
-  //       } else {
-  //         return (prevCount = 0);
-  //       }
-  //     });
-  //   };
+    const decrement = (e) => {
+      e.preventDefault();
+      setCount(function (prevCount) {
+        if (prevCount > 0) {
+          return (prevCount -= 1);
+        } else {
+          return (prevCount = 0);
+        }
+      });
+    };
 
-  //   const handleClick = (e) => {
-  //     e.preventDefault();
-  //     if (count > 0) {
-  //       addToCart({ productId: id, quantity: count, price: price });
-  //     }
-  //   };
+    // const handleClick = (e) => {
+    //   e.preventDefault();
+    //   if (count > 0) {
+    //     addToCart({ productId: id, quantity: count, price: price });
+    //   }
+    // };
 
   return (
     <section className="cart">
@@ -79,8 +80,8 @@ const Cart = () => {
             <li className="cart__content-item" key={index}>
               <CartItem
                 productId={item.productId}
+                price={item.price.toLocaleString()}
                 quantity={item.quantity}
-                price={item.price}
               />
             </li>
           ))
@@ -92,9 +93,12 @@ const Cart = () => {
       </ul>
       <div className="cart__footer">
         {cartContents.length > 0 ? (
-          <h5 className="cart__total">{`Total: $${calcTotal()}`}</h5>
+            <div className="cart__total">
+                <h5 className="cart__total-text">{`Total: `}</h5>
+                <h5 className="cart__total-cost">{`$${calcTotal().toLocaleString()}`}</h5>
+            </div>
         ) : (
-          <h5 className="cart__total cart___total--empty">{""}</h5>
+          <h5 className="cart__total cart__total--empty">{""}</h5>
         )}
       </div>
     </section>

@@ -12,9 +12,6 @@
     z-index: 1;
     padding: 7rem 2rem 0;
 
-    // @include tablet-and-desktop {
-    // }
-
     &__container {
         @include container;
         border-radius: 10px;
@@ -27,10 +24,6 @@
             padding: 2rem;
         }
     }
-
-    // &__content {
-    //     margin: 2rem 0;
-    // }
 
     &__btn {
         margin-top: 1rem;
