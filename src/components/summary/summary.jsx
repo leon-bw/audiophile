@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./summary.scss";
 import CartItem from "../cartItem/cartItem";
 
-export default function Summary() {
+export default function Summary({ validateForm }) {
   const [cartContents, setCartContents] = useState(() => {
     const savedCart = sessionStorage.getItem("cartContents");
     return savedCart ? JSON.parse(savedCart) : [];

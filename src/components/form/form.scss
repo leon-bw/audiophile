@@ -82,5 +82,13 @@
       margin-right: 1rem;
       accent-color: $accent-primary;
     }
+
+    &--error {
+      border-color: $error;
+    }
+  }
+
+  &__error {
+    color: $error;
   }
 }
