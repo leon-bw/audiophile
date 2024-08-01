@@ -1,0 +1,41 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.cart {
+    &__header {
+        @include flex(center, space-between);
+    }
+
+    &__title {
+        font-weight: 500;
+    }
+
+    &__remove {
+        background: none;
+        border: none;
+        &:hover {
+            cursor: pointer;
+            color: $accent-primary;
+            text-decoration: underline;
+        }
+        &--empty {
+            display: none;
+        }
+    }
+
+    &__content-item {
+        list-style: none;
+        margin: 2rem 0;
+        &--empty {
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
+
+    &__total {
+        &--empty {
+            display: none;
+        }
+    }
+}

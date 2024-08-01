@@ -1,0 +1,48 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.modal {
+    @include flex(column, flex-start);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: $text-primary-faint;
+    z-index: 1;
+    padding: 7rem 2rem 0;
+
+    // @include tablet-and-desktop {
+    // }
+
+    &__container {
+        @include container;
+        border-radius: 10px;
+        background-color: $bg-primary;
+
+        @include tablet-and-desktop {
+            width: 50%;
+            margin: 0;
+            margin-left: auto;
+            padding: 2rem;
+        }
+    }
+
+    // &__content {
+    //     margin: 2rem 0;
+    // }
+
+    &__btn {
+        margin-top: 1rem;
+        padding: 1rem;
+        width: 100%;
+        background-color: $accent-primary;
+        color: $text-secondary;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        &:hover {
+            background-color: $accent-secondary;
+        }
+    }
+}

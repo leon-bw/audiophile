@@ -1,0 +1,41 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.order {
+
+    &__title,
+    &__text {
+        margin: 1rem 0;
+    }
+
+    &__check {
+        background-color: $accent-primary;
+        border-radius: 50%;
+        height: 3rem;
+        width: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    &__items {
+        background-color: $bg-mid;
+        border-radius: 10px 10px 0 0;
+        padding: 1rem;
+    }
+
+    &__total {
+        background-color: $bg-secondary;
+        color: $text-secondary-faint;
+        border-radius: 0 0 10px 10px; 
+        padding: 1rem;
+        &-heading {
+            font-weight: 400;
+            font-size: .8rem;
+            margin-bottom: .5rem;
+        }
+
+        &-figure {
+            color: $text-secondary;
+            border-radius: 0 0 10px 10px; 
+        }
+    }
+}

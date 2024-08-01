@@ -1,20 +1,6 @@
-import { useState } from "react";
 import "./form.scss";
 
-export default function Form() {
-  const [formData, setFormData] = useState({
-    userName: "",
-    email: "",
-    phone: "",
-    address: "",
-    postcode: "",
-    city: "",
-    country: "",
-    payMethod: "eMoney",
-    eNum: "",
-    ePin: "",
-  });
-
+export default function Form({ formErrors, formData, setFormData }) {
   const changeHandler = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
@@ -36,9 +22,14 @@ export default function Form() {
               name="userName"
               value={formData.userName}
               onChange={changeHandler}
-              className="form__input"
+              className={`form__input ${
+                formErrors.userName ? "form__input--error" : ""
+              }`}
               placeholder="Type here..."
             />
+            {formErrors.userName && (
+              <span className="form__error">{formErrors.userName}</span>
+            )}
           </div>
           <div className="form__wrapper">
             <label htmlFor="email" className="form__label">
@@ -50,9 +41,14 @@ export default function Form() {
               name="email"
               value={formData.email}
               onChange={changeHandler}
-              className="form__input"
+              className={`form__input ${
+                formErrors.email ? "form__input--error" : ""
+              }`}
               placeholder="Type here..."
             />
+            {formErrors.email && (
+              <span className="form__error">{formErrors.email}</span>
+            )}
           </div>
           <div className="form__wrapper">
             <label htmlFor="phone" className="form__label">
@@ -64,9 +60,14 @@ export default function Form() {
               name="phone"
               value={formData.phone}
               onChange={changeHandler}
-              className="form__input"
+              className={`form__input ${
+                formErrors.phone ? "form__input--error" : ""
+              }`}
               placeholder="Type here..."
             />
+            {formErrors.phone && (
+              <span className="form__error">{formErrors.phone}</span>
+            )}
           </div>
         </div>
       </section>
@@ -83,9 +84,14 @@ export default function Form() {
               name="address"
               value={formData.address}
               onChange={changeHandler}
-              className="form__input"
+              className={`form__input ${
+                formErrors.address ? "form__input--error" : ""
+              }`}
               placeholder="Type here..."
             />
+            {formErrors.address && (
+              <span className="form__error">{formErrors.address}</span>
+            )}
           </div>
           <div className="form__wrapper">
             <label htmlFor="postcode" className="form__label">
@@ -97,9 +103,14 @@ export default function Form() {
               name="postcode"
               value={formData.postcode}
               onChange={changeHandler}
-              className="form__input"
+              className={`form__input ${
+                formErrors.postcode ? "form__input--error" : ""
+              }`}
               placeholder="Type here..."
             />
+            {formErrors.postcode && (
+              <span className="form__error">{formErrors.postcode}</span>
+            )}
           </div>
           <div className="form__wrapper">
             <label htmlFor="city" className="form__label">
@@ -111,9 +122,14 @@ export default function Form() {
               name="city"
               value={formData.city}
               onChange={changeHandler}
-              className="form__input"
+              className={`form__input ${
+                formErrors.city ? "form__input--error" : ""
+              }`}
               placeholder="Type here..."
             />
+            {formErrors.city && (
+              <span className="form__error">{formErrors.city}</span>
+            )}
           </div>
           <div className="form__wrapper">
             <label htmlFor="country" className="form__label">
@@ -125,9 +141,14 @@ export default function Form() {
               name="country"
               value={formData.country}
               onChange={changeHandler}
-              className="form__input"
+              className={`form__input ${
+                formErrors.country ? "form__input--error" : ""
+              }`}
               placeholder="Type here..."
             />
+            {formErrors.country && (
+              <span className="form__error">{formErrors.country}</span>
+            )}
           </div>
         </div>
       </section>
@@ -185,9 +206,14 @@ export default function Form() {
               name="eNum"
               value={formData.eNum}
               onChange={changeHandler}
-              className="form__input"
+              className={`form__input ${
+                formErrors.eNum ? "form__input--error" : ""
+              }`}
               placeholder="Type here..."
             />
+            {formErrors.eNum && (
+              <span className="form__error">{formErrors.eNum}</span>
+            )}
           </div>
           <div className="form__wrapper">
             <label htmlFor="ePin" className="form__label">
@@ -199,9 +225,14 @@ export default function Form() {
               name="ePin"
               value={formData.ePin}
               onChange={changeHandler}
-              className="form__input"
+              className={`form__input ${
+                formErrors.ePin ? "form__input--error" : ""
+              }`}
               placeholder="Type here..."
             />
+            {formErrors.ePin && (
+              <span className="form__error">{formErrors.ePin}</span>
+            )}
           </div>
         </div>
       </section>
