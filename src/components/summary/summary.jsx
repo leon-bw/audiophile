@@ -1,8 +1,23 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./summary.scss";
 import CartItem from "../cartItem/cartItem";
+import Modal from "../Modal/Modal";
+import Order from "../Order/Order";
 
 export default function Summary({ validateForm }) {
+  const [orderOpen, setOrderOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleOrderClick = () => {
+    setOrderOpen(false);
+  };
+
+  const handleOrderSubmit = () => {
+    setOrderOpen(false);
+    navigate("/");
+  };
+
   const [cartContents, setCartContents] = useState(() => {
     const savedCart = sessionStorage.getItem("cartContents");
     return savedCart ? JSON.parse(savedCart) : [];
@@ -67,9 +82,22 @@ export default function Summary({ validateForm }) {
             : `$ 0`}
         </p>
       </div>
-      <button type="submit" form="checkout" className="summary__btn">
+      <button
+        type="submit"
+        form="checkout"
+        className="summary__btn"
+        onClick={() => setOrderOpen(true)}
+      >
         continue & pay
       </button>
+      {orderOpen && (
+        <Modal
+          onSubmit={handleOrderSubmit}
+          close={handleOrderClick}
+          content={<Order />}
+          children={`back to home`}
+        />
+      )}
     </section>
   );
 }
