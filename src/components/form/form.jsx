@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./form.scss";
 
 export default function Form({ formErrors, formData, setFormData }) {
