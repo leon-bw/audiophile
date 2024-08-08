@@ -90,8 +90,7 @@ const ProductDetails = ({
                 $ {price.toLocaleString()}
               </p>
               <form className="product-details__cart">
-                <QuantityPicker count={count}
-                setCount={setCount}/>
+                <QuantityPicker count={count} setCount={setCount} />
                 <button
                   className="product-details__cart--add"
                   onClick={handleClick}

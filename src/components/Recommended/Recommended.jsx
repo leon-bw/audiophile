@@ -2,13 +2,15 @@ import "./Recommended.scss";
 import myData from "../../assets/data.json";
 import { useNavigate } from "react-router-dom";
 
-const Recommended = ({ others, productName }) => {
+const Recommended = ({ others }) => {
   const nav = useNavigate();
 
-  const recommendedProd = myData.find((item) => item.name === productName);
-  console.log(recommendedProd);
+  const recommendedProd = (prodName) => {
+    return myData.find((item) => item.slug === prodName);
+  };
 
   const handleNav = (category, name) => {
+    console.log(`/${category}/${name}`);
     nav(`/${category}/${name}`);
   };
 
@@ -19,7 +21,6 @@ const Recommended = ({ others, productName }) => {
         <ul className="recommended__list">
           {others &&
             others.map((item, index) => {
-              
               return (
                 <li className="recommended__item" key={index}>
                   <img
@@ -40,7 +41,12 @@ const Recommended = ({ others, productName }) => {
                   <h3 className="recommended__name">{item.name}</h3>
                   <button
                     className="recommended__btn"
-                    onClick={() => handleNav(recommendedProd.category, recommendedProd.name)}
+                    onClick={() =>
+                      handleNav(
+                        recommendedProd(item.slug).category,
+                        recommendedProd(item.slug).id
+                      )
+                    }
                   >
                     see product
                   </button>
