@@ -72,27 +72,27 @@
   }
 
   &__cart {
-    &--decrease,
-    &--increase {
-      background-color: $bg-primary;
-      color: $text-primary;
-      padding: 0.75rem;
-      border: none;
-      cursor: pointer;
+    // &--decrease,
+    // &--increase {
+    //   background-color: $bg-primary;
+    //   color: $text-primary;
+    //   padding: 0.75rem;
+    //   border: none;
+    //   cursor: pointer;
 
-      &:hover {
-        color: $accent-primary;
-      }
-    }
+    //   &:hover {
+    //     color: $accent-primary;
+    //   }
+    // }
 
-    &--quantity {
-      color: $text-primary;
-      padding: 0.75rem 0 0.75rem 0.75rem;
-      width: 2.5rem;
-      border: none;
-      background-color: $bg-primary;
-      text-align: center;
-    }
+    // &--quantity {
+    //   color: $text-primary;
+    //   padding: 0.75rem 0 0.75rem 0.75rem;
+    //   width: 2.5rem;
+    //   border: none;
+    //   background-color: $bg-primary;
+    //   text-align: center;
+    // }
 
     &--add {
       background-color: $accent-primary;
