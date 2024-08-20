@@ -23,7 +23,7 @@
   }
 
   &__container {
-    @include flex(row, start);
+    @include flex(row, start, start);
     flex-wrap: wrap;
     gap: 1rem;
 
@@ -82,5 +82,13 @@
       margin-right: 1rem;
       accent-color: $accent-primary;
     }
+
+    &--error {
+      border-color: $error;
+    }
+  }
+
+  &__error {
+    color: $error;
   }
 }

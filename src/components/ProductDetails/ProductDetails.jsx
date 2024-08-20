@@ -29,16 +29,16 @@ const ProductDetails = ({
   }, [cartContents]);
 
   const addToCart = (newItem) => {
-    setCartContents((prevCartContents) => {
-      const existingItemIndex = prevCartContents.findIndex((item) => {
+    setCartContents((cartContents) => {
+      const existingItemIndex = cartContents.findIndex((item) => {
         return item.productId === newItem.productId;
       });
       if (existingItemIndex !== -1) {
-        const updatedCartContents = [...prevCartContents];
+        const updatedCartContents = [...cartContents];
         updatedCartContents[existingItemIndex].quantity += newItem.quantity; //strictMode causes the quantity to increase by newItem.quantity twice
         return updatedCartContents;
       } else {
-        return [...prevCartContents, newItem];
+        return [...cartContents, newItem];
       }
     });
   };

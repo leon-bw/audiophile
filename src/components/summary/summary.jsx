@@ -5,7 +5,7 @@ import CartItem from "../cartItem/cartItem";
 import Modal from "../Modal/Modal";
 import Order from "../Order/Order";
 
-export default function Summary() {
+export default function Summary({ validateForm }) {
   const [orderOpen, setOrderOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -35,6 +35,16 @@ export default function Summary() {
       sum += e.quantity * e.price;
     });
     return sum;
+  };
+
+  const handleCheckoutClick = (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    } else {
+      setOrderOpen(true);
+    }
   };
 
   return (
