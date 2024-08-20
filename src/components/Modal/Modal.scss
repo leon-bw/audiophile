@@ -15,13 +15,17 @@
     &__container {
         @include container;
         border-radius: 10px;
-        background-color: $bg-primary;
+        background-color: $text-secondary;
 
         @include tablet-and-desktop {
-            width: 50%;
+            width: 60%;
             margin: 0;
             margin-left: auto;
             padding: 2rem;
+        }
+
+        @include desktop {
+            margin: 0;
         }
     }
 

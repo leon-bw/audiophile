@@ -10,7 +10,6 @@ const Recommended = ({ others }) => {
   };
 
   const handleNav = (category, name) => {
-    console.log(`/${category}/${name}`);
     nav(`/${category}/${name}`);
   };
 

@@ -2,10 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./Cart.scss";
 import CartItem from "../cartItem/cartItem";
-// import QuantityPicker from "../QuantityPicker/QuantityPicker";
 
 const Cart = () => {
-//   const [count, setCount] = useState(0);
   const [cartContents, setCartContents] = useState(() => {
     const savedCart = sessionStorage.getItem("cartContents");
     return savedCart ? JSON.parse(savedCart) : [];
@@ -37,13 +35,6 @@ const Cart = () => {
     setCartContents([]);
     window.location.reload();
   };
-
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   if (count > 0) {
-  //     addToCart({ productId: id, quantity: count, price: price });
-  //   }
-  // };
 
   return (
     <section className="cart">

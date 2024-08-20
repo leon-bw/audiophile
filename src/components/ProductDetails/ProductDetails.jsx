@@ -53,15 +53,15 @@ const ProductDetails = ({
   const { mobile, tablet, desktop } = image;
 
   const formattedFeatures = features.split("\n").map((line, index) => (
-    <>
-      {line} <br key={index} />
-    </>
+    <React.Fragment key={index}>
+      {line} <br />
+    </React.Fragment>
   ));
 
   return (
     <section className="product-details">
       <div className="product-details__container">
-        <div className="products-details__item">
+        <div className="product-details__item">
           <div className="product-details__listing">
             <div className="product-details__img">
               <img
