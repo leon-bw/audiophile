@@ -55,6 +55,10 @@
     &-text {
       text-transform: uppercase;
       font-size: 0.9rem;
+      &:hover {
+        color: $accent-primary;
+        cursor: pointer;
+      }
     }
   }
 
