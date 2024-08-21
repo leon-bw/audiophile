@@ -18,7 +18,7 @@
     &__container {
         @include container;
         border-radius: 10px;
-        background-color: $bg-primary;
+        background-color: $text-secondary;
 
         @include tablet-and-desktop {
             width: 50%;

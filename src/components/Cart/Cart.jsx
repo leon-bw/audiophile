@@ -4,7 +4,6 @@ import "./Cart.scss";
 import CartItem from "../cartItem/cartItem";
 
 const Cart = () => {
-  // const [count, setCount] = useState(0);
   const [cartContents, setCartContents] = useState(() => {
     const savedCart = sessionStorage.getItem("cartContents");
     return savedCart ? JSON.parse(savedCart) : [];
@@ -36,31 +35,6 @@ const Cart = () => {
     setCartContents([]);
     window.location.reload();
   };
-
-  //   const increment = (e) => {
-  //     e.preventDefault();
-  //     setCount(function (prevCount) {
-  //       return (prevCount += 1);
-  //     });
-  //   };
-
-  //   const decrement = (e) => {
-  //     e.preventDefault();
-  //     setCount(function (prevCount) {
-  //       if (prevCount > 0) {
-  //         return (prevCount -= 1);
-  //       } else {
-  //         return (prevCount = 0);
-  //       }
-  //     });
-  //   };
-
-  //   const handleClick = (e) => {
-  //     e.preventDefault();
-  //     if (count > 0) {
-  //       addToCart({ productId: id, quantity: count, price: price });
-  //     }
-  //   };
 
   return (
     <section className="cart">
