@@ -16,17 +16,48 @@
         margin-bottom: 1rem;
     }
 
+    &__summary {
+        @include tablet-and-desktop {
+            @include flex(row, center, normal)
+        }
+    }
+
     &__items {
-        background-color: $bg-mid;
+        background-color: $bg-primary;
+        color: $bg-mid;
         border-radius: 10px 10px 0 0;
         padding: 1rem;
+        list-style: none;
+
+        @include tablet-and-desktop {
+            border-radius: 10px 0 0 10px;
+        }
+    }
+
+    &__divider {
+        height: .1rem;
+        background-color: $bg-mid;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    &__quantity {
+        text-align: center;
     }
 
     &__total {
         background-color: $bg-secondary;
         color: $text-secondary-faint;
         border-radius: 0 0 10px 10px; 
-        padding: 1rem;
+        padding: 1.5rem;
+
+        @include tablet-and-desktop {
+            @include flex(column, center, flex-start);
+            border-radius: 0 10px 10px 0;
+            padding: 1.5rem;
+            min-width: 40%;
+        }
+
         &-heading {
             font-weight: 400;
             font-size: .8rem;

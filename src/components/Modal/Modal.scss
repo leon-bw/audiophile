@@ -12,8 +12,8 @@
     z-index: 1;
     padding: 7rem 2rem 0;
 
-    // @include tablet-and-desktop {
-    // }
+    @include tablet-and-desktop {
+    }
 
     &__container {
         @include container;
@@ -22,9 +22,14 @@
 
         @include tablet-and-desktop {
             width: 50%;
+            max-width: 30rem;
             margin: 0;
             margin-left: auto;
             padding: 2rem;
+        }
+
+        @include desktop {
+            margin-left: 0;
         }
     }
 

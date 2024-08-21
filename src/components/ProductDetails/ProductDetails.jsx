@@ -70,9 +70,9 @@ const ProductDetails = ({
   const { mobile, tablet, desktop } = image;
 
   const formattedFeatures = features.split("\n").map((line, index) => (
-    <>
-      {line} <br key={index} />
-    </>
+    <React.Fragment key={index}>
+      {line} <br />
+    </React.Fragment>
   ));
 
   return (

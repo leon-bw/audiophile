@@ -15,6 +15,7 @@ export default function Summary({ validateForm }) {
 
   const handleOrderSubmit = () => {
     setOrderOpen(false);
+    sessionStorage.removeItem("cartContents");
     navigate("/");
   };
 
@@ -93,7 +94,7 @@ export default function Summary({ validateForm }) {
         </p>
       </div>
       <button
-        type="submit"
+        type="button"
         form="checkout"
         className="summary__btn"
         onClick={handleCheckoutClick}
@@ -104,7 +105,7 @@ export default function Summary({ validateForm }) {
         <Modal
           onSubmit={handleOrderSubmit}
           close={handleOrderClick}
-          content={<Order />}
+          content={<Order cartContents={cartContents} />}
           children={`back to home`}
         />
       )}
