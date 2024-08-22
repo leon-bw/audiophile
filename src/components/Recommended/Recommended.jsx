@@ -1,11 +1,16 @@
 import "./Recommended.scss";
+import myData from "../../assets/data.json";
 import { useNavigate } from "react-router-dom";
 
 const Recommended = ({ others }) => {
   const nav = useNavigate();
 
-  const handleNav = (productId) => {
-    nav(`/${productName}/${productId}`);
+  const recommendedProd = (prodName) => {
+    return myData.find((item) => item.slug === prodName);
+  };
+
+  const handleNav = (category, name) => {
+    nav(`/${category}/${name}`);
   };
 
   return (
@@ -35,7 +40,12 @@ const Recommended = ({ others }) => {
                   <h3 className="recommended__name">{item.name}</h3>
                   <button
                     className="recommended__btn"
-                    onClick={() => handleNav(item.name, item.slug)}
+                    onClick={() =>
+                      handleNav(
+                        recommendedProd(item.slug).category,
+                        recommendedProd(item.slug).id
+                      )
+                    }
                   >
                     see product
                   </button>

@@ -93,6 +93,7 @@
     &:hover {
       filter: brightness(0) saturate(100%) invert(74%) sepia(30%)
         saturate(4424%) hue-rotate(327deg) brightness(91%) contrast(85%);
+        cursor: pointer;
     }
   }
 }

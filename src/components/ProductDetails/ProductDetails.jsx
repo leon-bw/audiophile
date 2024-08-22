@@ -3,6 +3,7 @@ import React from "react";
 import "./ProductDetails.scss";
 import Gallery from "../Gallery/Gallery";
 import Recommended from "../Recommended/Recommended";
+import QuantityPicker from "../QuantityPicker/QuantityPicker";
 
 const ProductDetails = ({
   id,
@@ -17,24 +18,6 @@ const ProductDetails = ({
   others,
 }) => {
   const [count, setCount] = useState(0);
-
-  const increment = (e) => {
-    e.preventDefault();
-    setCount(function (prevCount) {
-      return (prevCount += 1);
-    });
-  };
-
-  const decrement = (e) => {
-    e.preventDefault();
-    setCount(function (prevCount) {
-      if (prevCount > 0) {
-        return (prevCount -= 1);
-      } else {
-        return (prevCount = 0);
-      }
-    });
-  };
 
   const [cartContents, setCartContents] = useState(() => {
     const savedCart = sessionStorage.getItem("cartContents");
@@ -70,15 +53,15 @@ const ProductDetails = ({
   const { mobile, tablet, desktop } = image;
 
   const formattedFeatures = features.split("\n").map((line, index) => (
-    <>
-      {line} <br key={index} />
-    </>
+    <React.Fragment key={index}>
+      {line} <br />
+    </React.Fragment>
   ));
 
   return (
     <section className="product-details">
       <div className="product-details__container">
-        <div className="products-details__item">
+        <div className="product-details__item">
           <div className="product-details__listing">
             <div className="product-details__img">
               <img
@@ -107,24 +90,7 @@ const ProductDetails = ({
                 $ {price.toLocaleString()}
               </p>
               <form className="product-details__cart">
-                <button
-                  className="product-details__cart--decrease"
-                  onClick={decrement}
-                >
-                  -
-                </button>
-                <input
-                  className="product-details__cart--quantity"
-                  type="number"
-                  value={count}
-                  readOnly
-                />
-                <button
-                  className="product-details__cart--increase"
-                  onClick={increment}
-                >
-                  +
-                </button>
+                <QuantityPicker count={count} setCount={setCount} />
                 <button
                   className="product-details__cart--add"
                   onClick={handleClick}

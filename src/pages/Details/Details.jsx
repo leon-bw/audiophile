@@ -15,8 +15,6 @@ export default function Details() {
       const foundProduct = Data.find((item) => item.id === parseInt(productId));
       if (foundProduct) {
         setProductData(foundProduct);
-      } else {
-        console.log("product not found");
       }
     };
 

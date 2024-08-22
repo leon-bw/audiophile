@@ -63,6 +63,7 @@ export default function Header() {
           <img
             src={cartIcon}
             alt="Shopping cart"
+            className="header__cart-icon"
             onClick={() => setModalOpen(true)}
           />
           {modalOpen && (

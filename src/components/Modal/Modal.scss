@@ -12,25 +12,22 @@
     z-index: 1;
     padding: 7rem 2rem 0;
 
-    // @include tablet-and-desktop {
-    // }
-
     &__container {
         @include container;
         border-radius: 10px;
-        background-color: $bg-primary;
+        background-color: $text-secondary;
 
         @include tablet-and-desktop {
-            width: 50%;
+            width: 60%;
             margin: 0;
             margin-left: auto;
             padding: 2rem;
         }
-    }
 
-    // &__content {
-    //     margin: 2rem 0;
-    // }
+        @include desktop {
+            margin: 0;
+        }
+    }
 
     &__btn {
         margin-top: 1rem;

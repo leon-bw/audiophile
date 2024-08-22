@@ -55,10 +55,20 @@
     &-text {
       text-transform: uppercase;
       font-size: 0.9rem;
+      &:hover {
+        color: $accent-primary;
+        cursor: pointer;
+      }
     }
   }
 
   &__cart {
     margin-left: auto;
+    &-icon {
+      &:hover {
+        cursor: pointer;
+        filter: brightness(0) saturate(100%) invert(77%) sepia(22%) saturate(5941%) hue-rotate(325deg) brightness(89%) contrast(89%);
+      }
+    }
   }
 }
