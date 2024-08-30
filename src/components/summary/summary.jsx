@@ -93,7 +93,7 @@ export default function Summary({ validateForm }) {
             : `$ 0`}
         </p>
       </div>
-      <button type="button" form="checkout" className="summary__btn" onClick={() => setOrderOpen(true)}>
+      <button type="button" form="checkout" className="summary__btn" onClick={handleCheckoutClick}>
         continue & pay
       </button>
       {orderOpen && (
