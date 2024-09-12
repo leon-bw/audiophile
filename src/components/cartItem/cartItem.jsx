@@ -4,10 +4,17 @@ import "./cartItem.scss";
 export default function CartItem({ productId, quantity, price }) {
   const filteredItem = myData.find((item) => item.id === productId);
 
+  const editedPath = (str) => {
+    if (str.startsWith(".")) {
+      str = str.slice(1);
+    }
+    return str;
+  };
+
   return (
     <article className="cart-item">
       <img
-        src={filteredItem.image.mobile}
+        src={editedPath(filteredItem.image.mobile)}
         alt="image"
         className="cart-item__img"
       />

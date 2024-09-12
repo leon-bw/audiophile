@@ -3,9 +3,15 @@ import facebook from "../../assets/images/shared/desktop/icon-facebook.svg";
 import twitter from "../../assets/images/shared/desktop/icon-twitter.svg";
 import instagram from "../../assets/images/shared/desktop/icon-instagram.svg";
 import logo from "../../assets/images/shared/desktop/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Footer = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <footer className="footer">
       <div className="footer__container">

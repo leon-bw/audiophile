@@ -3,7 +3,7 @@ import burgerIcon from "../../assets/images/shared/tablet/icon-hamburger.svg";
 import logo from "../../assets/images/shared/desktop/logo.svg";
 import cartIcon from "../../assets/images/shared/desktop/icon-cart.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "../navigation/navigation";
 import Modal from "../Modal/Modal";
 import Cart from "../Cart/Cart";
@@ -24,6 +24,20 @@ export default function Header() {
 
   const toggleNav = () => {
     setShowNav(!showNav);
+  };
+
+  const [cartContents, setCartContents] = useState(() => {
+    const savedCart = sessionStorage.getItem("cartContents");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  const itemCount = () => {
+    let sum = 0;
+
+    cartContents.forEach((e) => {
+      sum += e.quantity;
+    });
+    return sum;
   };
 
   return (
@@ -60,6 +74,11 @@ export default function Header() {
           </Link>
         </div>
         <div className="header__cart">
+          {itemCount() !== 0 && (
+            <div className="header__cart-pip">
+              <p className="header__cart-text">{itemCount()}</p>
+            </div>
+          )}
           <img
             src={cartIcon}
             alt="Shopping cart"
