@@ -1,27 +1,26 @@
 @use "../../styles/partials/utilities/variables" as *;
 @use "../../styles/partials/utilities/mixins" as *;
 
-
 .quantity {
-    &__decrease,
-    &__increase {
-      background-color: $bg-primary;
-      color: $text-primary;
-      padding: .8rem;
-      border: none;
-      cursor: pointer;
+  &__decrease,
+  &__increase {
+    background-color: $bg-primary;
+    color: $text-primary;
+    padding: 0.8rem;
+    border: none;
+    cursor: pointer;
 
-      &:hover {
-        color: $accent-primary;
-      }
+    &:hover {
+      color: $accent-primary;
     }
+  }
 
-    &__figure {
-      color: $text-primary;
-      padding: 0.8rem 0;
-      width: 2.5rem;
-      border: none;
-      background-color: $bg-primary;
-      text-align: center;
-    }
+  &__figure {
+    color: $text-primary;
+    padding: 0.8rem 0;
+    width: 2.5rem;
+    border: none;
+    background-color: $bg-primary;
+    text-align: center;
+  }
 }

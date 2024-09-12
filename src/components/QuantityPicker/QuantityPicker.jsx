@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./QuantityPicker.scss";
 
-
-const QuantityPicker = ({ count, setCount}) => {
-
+const QuantityPicker = ({ count, setCount }) => {
   const increment = (e) => {
     e.preventDefault();
     setCount(function (prevCount) {
