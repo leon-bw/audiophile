@@ -22,18 +22,20 @@ const QuantityPicker = ({ count, setCount }) => {
 
   return (
     <>
-      <button className="quantity__decrease" onClick={decrement}>
-        -
-      </button>
-      <input
-        className="quantity__figure"
-        type="number"
-        value={count}
-        readOnly
-      />
-      <button className="quantity__increase" onClick={increment}>
-        +
-      </button>
+      <section className="quantity">
+        <button className="quantity__btn" onClick={decrement}>
+          <span className="quantity__icon">-</span>
+        </button>
+        <input
+          className="quantity__figure"
+          type="number"
+          value={count}
+          readOnly
+        />
+        <button className="quantity__btn" onClick={increment}>
+        <span className="quantity__icon">+</span>
+        </button>
+      </section>
     </>
   );
 };

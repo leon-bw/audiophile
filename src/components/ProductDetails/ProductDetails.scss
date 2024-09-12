@@ -12,7 +12,7 @@
     @include tablet-and-desktop {
       width: 70%;
       margin-left: 5rem;
-      @include flex(column, center, baseline);
+      @include flex(column, center, normal );
     }
   }
 
@@ -72,34 +72,15 @@
   }
 
   &__cart {
-    // &--decrease,
-    // &--increase {
-    //   background-color: $bg-primary;
-    //   color: $text-primary;
-    //   padding: 0.75rem;
-    //   border: none;
-    //   cursor: pointer;
 
-    //   &:hover {
-    //     color: $accent-primary;
-    //   }
-    // }
-
-    // &--quantity {
-    //   color: $text-primary;
-    //   padding: 0.75rem 0 0.75rem 0.75rem;
-    //   width: 2.5rem;
-    //   border: none;
-    //   background-color: $bg-primary;
-    //   text-align: center;
-    // }
+    @include flex(row, space-between, center);
+    max-width: 20rem;
 
     &--add {
       background-color: $accent-primary;
       color: $text-secondary;
       text-transform: uppercase;
       padding: 0.75rem 1.5rem;
-      margin-left: 2rem;
       border: none;
       font-size: 0.9rem;
       cursor: pointer;
