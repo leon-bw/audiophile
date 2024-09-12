@@ -48,6 +48,8 @@ const ProductDetails = ({
     if (count > 0) {
       addToCart({ productId: id, quantity: count, price: price });
     }
+    window.location.reload();
+    window.scrollTo(0, 0);
   };
 
   const { mobile, tablet, desktop } = image;

@@ -64,11 +64,29 @@
 
   &__cart {
     margin-left: auto;
+    position: relative;
     &-icon {
       &:hover {
         cursor: pointer;
-        filter: brightness(0) saturate(100%) invert(77%) sepia(22%) saturate(5941%) hue-rotate(325deg) brightness(89%) contrast(89%);
+        filter: brightness(0) saturate(100%) invert(77%) sepia(22%)
+          saturate(5941%) hue-rotate(325deg) brightness(89%) contrast(89%);
       }
+    }
+
+    &-pip {
+      @include flex;
+      position: absolute;
+      top: -1rem;
+      right: -1rem;
+      background-color: $accent-primary;
+      border-radius: 100%;
+      width: 1rem;
+      height: 1rem;
+      padding: 0.75rem;
+    }
+
+    &-text {
+      color: $text-secondary;
     }
   }
 }
