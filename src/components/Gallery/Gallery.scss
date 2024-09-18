@@ -1,0 +1,47 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.gallery {
+
+    &__container {
+        margin: 5rem 0;
+        @include tablet-and-desktop {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+
+  &__img {
+    &--mobile {
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+      @include tablet-and-desktop {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include tablet-and-desktop {
+        border-radius: 0.5rem;
+        margin: 1rem 0;
+        display: block;
+      }
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include desktop {
+        border-radius: 0.5rem;
+        margin: 1rem 0;
+        display: block;
+      }
+    }
+  }
+}

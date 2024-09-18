@@ -1,11 +1,62 @@
-@use "./styles/variables" as *;
-@use "./styles/mixins" as *;
-@use "./styles/typography";
-@use "./styles/resets";
+@use "./styles/partials/utilities/variables" as *;
+@use "./styles/partials/utilities/mixins" as *;
+@use "./styles/partials/base/typography";
+@use "./styles/partials/base/reset";
 
 #root {
   @include flex(column, normal, normal);
   background-color: $text-secondary;
   min-height: 100vh;
   color: $text-primary;
+  position: relative;
+}
+
+h1 {
+  font-family: "Manrope", sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  @include tablet-and-desktop {
+    font-size: 3.5rem;
+  }
+}
+
+h2 {
+  font-family: "Manrope", sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: "Manrope", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: "Manrope", sans-serif;
+  font-weight: bold;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-family: "Manrope", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-family: "Manrope", sans-serif;
+  font-weight: bold;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Manrope", sans-serif;
+  font-weight: lighter;
 }

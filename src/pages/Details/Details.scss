@@ -1,0 +1,19 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.details {
+    &__container {
+        @include container;
+    }
+
+    &__back-btn {
+        color: $text-primary-faint;
+        margin-bottom: 1.5rem;
+        background: none;
+        border: none;
+        &:hover {
+            color: $accent-primary;
+            cursor: pointer;
+        }
+    }
+}

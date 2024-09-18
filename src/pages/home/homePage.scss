@@ -1,0 +1,133 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.zx9 {
+  @include container;
+
+  &__container {
+    @include container;
+    @include flex(column);
+    gap: 1rem;
+    background-color: $accent-primary;
+    border-radius: 0.5rem;
+    color: $text-secondary;
+    text-align: center;
+    background-image: url("../../assets/images/home/desktop/pattern-circles.svg");
+    background-size: cover;
+    background-position: center top -5rem;
+    background-repeat: no-repeat;
+
+    @include tablet-and-desktop {
+      gap: 2rem;
+    }
+  }
+
+  &__img {
+    width: 50%;
+    margin: 1rem;
+    max-width: 10rem;
+  }
+
+  &__text {
+    max-width: 20rem;
+    line-height: 2rem;
+  }
+
+  &__btn {
+    @include button-primary;
+    background-color: $text-primary;
+    padding: 1rem;
+
+    &:hover {
+      background-color: $bg-mid;
+    }
+  }
+}
+
+.yx1 {
+  @include container;
+
+  &__container {
+    @include flex($direction: column);
+    gap: 2rem;
+    height: 100%;
+
+    @include tablet-and-desktop {
+      @include flex($direction: row, $align-items: stretch);
+      gap: 1rem;
+    }
+  }
+
+  &__img {
+    border-radius: 0.5rem;
+    width: 100%;
+
+    @include tablet-and-desktop {
+      width: 50%;
+      height: 17rem;
+    }
+  }
+
+  &__content {
+    @include flex($direction: column, $align-items: flex-start);
+    background-color: $bg-primary;
+    border-radius: 0.5rem;
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+
+    @include desktop {
+      padding-left: 5rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.9rem;
+    font-weight: 500;
+  }
+}
+
+.zx7 {
+  @include container;
+
+  &__container {
+    @include flex($direction: column, $align-items: flex-start);
+    gap: 2rem;
+    background-image: url("../../assets/images/home/mobile/image-speaker-zx7.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8rem 2rem;
+    border-radius: 0.5rem;
+
+    @include tablet-and-desktop {
+      background-image: url("../../assets/images/home/tablet/image-speaker-zx7.jpg");
+      background-size: center;
+      padding: 8rem 3rem;
+    }
+
+    @include desktop {
+      background-image: url("../../assets/images/home/desktop/image-speaker-zx7.jpg");
+      background-position: right;
+      background-size: contain;
+      padding: 5rem 3rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}
+
+.btn {
+  border: 2px solid $bg-secondary;
+  padding: 1rem;
+  text-transform: uppercase;
+  margin-left: auto;
+
+  &:hover {
+    background-color: $bg-secondary;
+    color: $text-secondary;
+  }
+}

@@ -1,0 +1,88 @@
+@use "./variables" as *;
+
+@mixin tablet-and-desktop {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin button-primary {
+  text-transform: uppercase;
+  background-color: $accent-primary;
+  color: $text-secondary;
+  height: 3rem;
+  width: 10rem;
+  border: 1px solid $accent-primary;
+
+  &:hover {
+    background-color: $accent-secondary;
+    cursor: pointer;
+  }
+}
+
+@mixin button-secondary {
+  text-transform: uppercase;
+  color: $text-primary;
+  height: 3rem;
+  width: 10rem;
+  border: 1px solid $bg-secondary;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $bg-secondary;
+    color: $text-secondary;
+  }
+}
+
+@mixin container {
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @include tablet-and-desktop {
+    padding: 2rem;
+  }
+}
+
+@mixin form-field {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid $text-primary-faint;
+  width: 100%;
+
+  &:active,
+  &:focus,
+  &:hover {
+    border: 2px solid $accent-primary;
+  }
+
+  &::placeholder {
+    color: $text-primary-faint;
+  }
+}
+
+@mixin backing {
+  background-color: $bg-transparent;
+  box-shadow: 0 0 5px 5px $bg-transparent;
+  border-radius: 1rem;
+  padding: 0.25rem;
+}
+
+@mixin subheader {
+  text-transform: uppercase;
+  color: $accent-primary;
+}

@@ -1,0 +1,30 @@
+@use "../../styles/partials/utilities/variables" as *;
+@use "../../styles/partials/utilities/mixins" as *;
+
+.quantity {
+
+  @include flex(center, center);
+  background-color: $bg-primary;
+  color: $text-primary;
+
+  &__btn {
+    @include flex(center, center);
+    padding: .75rem;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $accent-primary;
+    }
+  }
+
+  &__figure {
+    @include flex(center, center);
+    width: 1.75rem;
+    border: none;
+    background-color: $bg-primary;
+    text-align: center;
+    position: relative;
+    left: .5rem;
+  }
+}
